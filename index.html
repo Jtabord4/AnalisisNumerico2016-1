@@ -1,115 +1,214 @@
 <html>
+
 <head>
-  <title>Analisis Numerico</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
+    <title>Analisis Numerico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 </head>
+
 <body>
-  <div class= "visible-xs">
-  		<div class = "header">
-  			<div class = "container" align="center">
-  				<!-- <img src = "images/logo_eafit.jpg" class="img-responsive"> -->
-  			</div>
-  		</div>
-  	</div>
-  	<div class = "navbar navbar-default navbar-static-top">
 
-      <div class="container">
-        <a href='#' class="navbar-brand"><font size="6">Analisis Numerico</font></a>
-        <button class="navbar-toggle" data-toggle="collapse" data-target = ".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#equipo" data-toggle="modal">Equipo de trabajo</a></li>
-          </ul>
+
+    <!--    <div class="visible-xs">
+        <div class="header">
+            <div class="container" align="center">
+            </div>
         </div>
-      </div>
     </div>
-  	<br>
+    <div class="navbar navbar-default navbar-static-top">
 
-  	<div class = "container">
-  		<div class = "row">
-        <a href="">
-  			<div class = "col-md-4">
-  				<div class="thumbnail">
-  					<img src="images/x.jpg" alt="Una sola variable" class="img-circle" href="analisisNum.html">
-  					<div class="caption">
-  						<h3><span class="label label-primary">Una sola variable</span></a></h3>
-  						<p>Metodos para solicion de funciones de una sola variable</p>
-  						<div class="hidden-xs">
-  							<br>
-  						</div>
-  						<p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
-  					</div>
-  				</div>
-  			</div>
-      </a>
-  			<div class = "col-md-4">
-  				<div class="thumbnail">
-  					<img src="images/matrix.jpg" alt="Matrices" class="img-circle">
-  					<div class="caption">
-  						<h3><span class="label label-primary">Matrices</span></h3>
-  						<p>Solucion de sistemas de ecuaciones con multiples variables con matrices</p>
-              <div class="hidden-xs">
-  							<br>
-  						</div>
-  						<p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
-  					</div>
-  				</div>
-  			</div>
-  			<div class = "col-md-4">
-  				<div class="thumbnail">
-  					<img src="images/interpolacion.jpg" alt="Interpolacion" class="img-circle">
-  					<div class="caption">
-  						<h3><span class="label label-primary">Interpolacion</span></h3>
-  						<p>Lo que sea de interpolacion XD</p>
-  						<div class="hidden-xs">
-  							<br>
+        <div class="container">
+            <a href='#' class="navbar-brand"><font size="6">Analisis Numerico</font></a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse navHeaderCollapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Ecuaciones lineales</a></li>
+                    <li class="active"><a href="#">Ecuaciones no lineales</a></li>
+                    <li><a href="#equipo" data-toggle="modal">Equipo de trabajo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="container">
+
+
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Analisis Numerico</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecuaciones Lineales <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#biseccionLineal">Biseccion</a></li>
+                                <li><a href="#reglaFalsaLineal
+                                
+                                ">Regla Falsa</a></li>
+                                <li><a href="#">Punto Fijo</a></li>
+                                <li><a href="#">Newton Raphson</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecuaciones No Lineales <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Biseccion</a></li>
+                                <li><a href="#">Regla Falsa</a></li>
+                                <li><a href="#">Punto Fijo</a></li>
+                                <li><a href="#">Newton Raphson</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#equipo" data-toggle="modal">Equipo de trabajo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div id="biseccionLineal">
+            <div class="panel-heading">
+                <h1>Biseccion</h1>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Limite Inferior</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Limite Superior</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Resultado:</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <center><a href="#" class="btn btn-primary">Ejecutar</a></center>
+            </div>
+        </div>
+        
+        <div id="reglaFalsaLineal">
+            <div class="panel-heading">
+                <h1>Regla Falsa</h1>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Limite Inferior</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Limite Superior</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Coordenadas</label>
+                    <br> X:
+                    <input type="text" class="form-control" placeholder="(2,3)"> Y:
+                    <input type="text" class="form-control" placeholder="(4,8">
+                </div>
+                <center><a href="#" class="btn btn-primary">Ejecutar</a></center>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <a href="">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="images/x.jpg" alt="Una sola variable" class="img-circle" href="analisisNum.html">
+                        <div class="caption">
+                            <h3><span class="label label-primary">Una sola variable</span></a></h3>
+                            <p>Metodos para solicion de funciones de una sola variable</p>
+                            <div class="hidden-xs">
+                                <br>
+                            </div>
+                            <p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="images/matrix.jpg" alt="Matrices" class="img-circle">
+                    <div class="caption">
+                        <h3><span class="label label-primary">Matrices</span></h3>
+                        <p>Solucion de sistemas de ecuaciones con multiples variables con matrices</p>
+                        <div class="hidden-xs">
+                            <br>
+                        </div>
+                        <p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="images/interpolacion.jpg" alt="Interpolacion" class="img-circle">
+                    <div class="caption">
+                        <h3><span class="label label-primary">Interpolacion</span></h3>
+                        <p>Lo que sea de interpolacion XD</p>
+                        <div class="hidden-xs">
+                            <br>
+                            <br>
+                        </div>
+                        <p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="equipo" role="dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Equipo de trabajo</h4>
+        </div>
+        <div class="modal-body">
+            <h2>Analisis Numerico</h2>
+            <p>Practica de solucion de unica o multiples variables con diferentes metodos de analisis numerico
+                <br> Por:
+                <br> Juan Pablo Taborda Alvarez
+                <br> Jose Cortes Jaramillo
+                <br> Jose David Balvin
                 <br>
-  						</div>
-  						<p><a href="analisisNum.html" class="btn btn-default">Aca!</a></p>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+                <br>
+                <br> Universidad EAFIT
+                <br> 2016-1
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="Submit" class="btn btn-default" data-dismiss="modal">Salir</button>
+        </div>
+    </div>
 
-  	<div class="modal fade" id="equipo" role="dialog">
-  				<div class="modal-header">
-  					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  					<h4 class="modal-title">Equipo de trabajo</h4>
-  				</div>
-  				<div class="modal-body">
-  					<h2>Analisis Numerico</h2>
-  					<p>Practica de solucion de unica o multiples variables con diferentes metodos de analisis numerico
-  						<br>
-  						Por:<br>
-  						Juan Pablo Taborda Alvarez<br>
-  						Jose Cortes Jaramillo<br>
-  						Jose David Balvin<br>
-  						<br>
-  						<br>
-  						Universidad EAFIT<br>
-  						2016-1
-  						</p>
-  				</div>
-  				<div class="modal-footer">
-  					<button type="Submit" class="btn btn-default" data-dismiss="modal">Salir</button>
-  				</div>
-  	</div>
-
-  				<div class="hidden-xs">
-  					<div class="col-md-4">
-  						<div id="copyright">
-  							<font color="white">
+    <div class="hidden-xs">
+        <div class="col-md-4">
+            <div id="copyright">
+                <font color="white">
   								<br>
   								<br>
   								&copy; Analisis Numerico 2016-1</font>
-  								<address>
+                <address>
   									<font color = "white">
   											<!-- Juan Pablo Taborda Alvarez<br> -->
   										EAFIT<br>
@@ -117,15 +216,14 @@
 
   									</font>
   								</address>
-  							</div>
-  						</div>
-  					</div>
-  				</div>
-  			</footer>
-  		</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </footer>
+    </div>
 
-  		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  		<script src = "js/bootstrap.js"></script>
+
 </body>
 
 </html>
