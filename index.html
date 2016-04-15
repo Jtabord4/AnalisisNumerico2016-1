@@ -45,7 +45,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
+                        aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -59,20 +59,15 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecuaciones Lineales <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#biseccionLineal">Biseccion</a></li>
-                                <li><a href="#reglaFalsaLineal
-                                
-                                ">Regla Falsa</a></li>
+                                <li><a href="#biseccionLineal">Biseccion | Regla Falsa | Secante | Newton</a></li>
                                 <li><a href="#">Punto Fijo</a></li>
-                                <li><a href="#">Newton Raphson</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecuaciones No Lineales <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sistemas de ecuaciones<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Biseccion</a></li>
-                                <li><a href="#">Regla Falsa</a></li>
+                                <li><a href="#">Biseccion | Regla Falsa | Secante | Newton</a></li>
                                 <li><a href="#">Punto Fijo</a></li>
                                 <li><a href="#">Newton Raphson</a></li>
                             </ul>
@@ -83,29 +78,55 @@
             </div>
         </nav>
 
+        <div class="alert alert-dismissible alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Bienvenido!</strong> XXX es una app diseñada para resolver diferentes tipos de funciones utilzando diferente
+            metodos propuestos, esperamos sea de gran utilidad!
+            <p class="text-warning">"Las máquinas deben trabajar. La gente debe pensar." Richard Hamming</p>
+        </div>
+
 
 
         <div id="biseccionLineal">
             <div class="panel-heading">
-                <h1>Biseccion</h1>
+                <h1>Biseccion | Regla Falsa | Secante | Newton </h1>
             </div>
             <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Limite Inferior</label>
+                 <div class="form-group">
+                    <label class="control-label" for="inputDefault">Funcion</label>
                     <input type="text" class="form-control" id="inputDefault">
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="inputDefault">Limite Superior</label>
+                    <label class="control-label" for="inputDefault">Valor Inferior</label>
                     <input type="text" class="form-control" id="inputDefault">
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="inputDefault">Resultado:</label>
+                    <label class="control-label" for="inputDefault">Valor Superior</label>
                     <input type="text" class="form-control" id="inputDefault">
                 </div>
-                <center><a href="#" class="btn btn-primary">Ejecutar</a></center>
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Iteraciones</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                 <div class="form-group">
+                    <label class="control-label" for="inputDefault">Tolerancia</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Metodo de ejecucion
+        <span class="caret"></span>
+      </a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="alert('hola mundo');">Biseccion</a></li>
+                        <li><a href="#">Regla Falsa</a></li>
+                        <li><a href="#">Secante</a></li>
+                        <li><a href="#">Newton</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
+
         <div id="reglaFalsaLineal">
             <div class="panel-heading">
                 <h1>Regla Falsa</h1>
@@ -205,9 +226,8 @@
         <div class="col-md-4">
             <div id="copyright">
                 <font color="white">
-  								<br>
-  								<br>
-  								&copy; Analisis Numerico 2016-1</font>
+                    <br>
+                    <br> &copy; Analisis Numerico 2016-1</font>
                 <address>
   									<font color = "white">
   											<!-- Juan Pablo Taborda Alvarez<br> -->
