@@ -1,15 +1,17 @@
 <head>
-        <title>Analisis Numerico</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    </head>
-    
-             <div class="container">
+    <title>Analisis Numerico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/matrizGenerator.js"></script>
+    <script src="js/main.js"></script>
+</head>
 
-      <div>
+<div class="container">
+
+    <div>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -40,25 +42,25 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sistemas de ecuaciones<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html">Metodos Directos</a></li>
-                                    <ul>
-                                        <li><a href="#">Eliminacion</a></li>
-                                        <li><a href="#">Pivoteo Parcial</a></li>
-                                        <li><a href="#">Pivoteo Total</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">Eliminacion</a></li>
+                                    <li><a href="#">Pivoteo Parcial</a></li>
+                                    <li><a href="#">Pivoteo Total</a></li>
+                                </ul>
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#iterativos">Metodos Iterativos</a></li>
-                                    <ul>
-                                        <li><a href="#">Jacobi</a></li>
-                                        <li><a href="#">Gauss Seidel</a></li>
-                                    </ul>
-                                    
+                                <ul>
+                                    <li><a href="#">Jacobi</a></li>
+                                    <li><a href="#">Gauss Seidel</a></li>
+                                </ul>
+
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#factorizacion">Factorizacion LU</a></li>
-                                    <ul>
-                                        <li><a href="#">LU GAUSS</a></li>
-                                        <li><a href="#">LU PARCIAL</a></li>
-                                        <li><a href="#">Crout</a></li>
-                                        <li><a href="#">Cholesky</a></li>
-                                        <li><a href="#">Doolittle</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">LU GAUSS</a></li>
+                                    <li><a href="#">LU PARCIAL</a></li>
+                                    <li><a href="#">Crout</a></li>
+                                    <li><a href="#">Cholesky</a></li>
+                                    <li><a href="#">Doolittle</a></li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -82,98 +84,109 @@
                 </div>
             </div>
         </nav>
-      </div>
-              <div id="directos">
-                <div class="panel-heading">
-                    <h1>Metodos Directos</h1>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Variables</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <!--tabla aca-->
-                    </div>
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Metodo de ejecucion
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="alert('  ');">Eliminacion</a></li>
-                            <li><a href="#">Pivoteo Parcial</a></li>
-                            <li><a href="#">Pivoteo Total</a></li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-              
-              <div id="iterativos">
-                <div class="panel-heading">
-                    <h1>Metodos Iterativos</h1>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Variables</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <!--tabla aca-->
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Numero de iteraciones</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Tolerancia</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Lambda</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Metodo de ejecucion
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="alert('  ');">Jacobi</a></li>
-                            <li><a href="#">Gauss Seidel</a></li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-              
-              <div id="factorizacion">
-                <div class="panel-heading">
-                    <h1>Factorizacion LU</h1>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Variables</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <!-- Tabla aca -->
-                    </div>
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Metodo de ejecucion
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="alert('  ');">LU GAUSS</a></li>
-                            <li><a href="#">LU PARCIAL</a></li>
-                            <li><a href="#">Crout</a></li>
-                            <li><a href="#">Doolittle</a></li>
-                            <li><a href="#">Cholesky</a></li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-            
+    </div>
+    <div id="directos">
+        <div class="panel-heading">
+            <h1>Metodos Directos</h1>
         </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Variables</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <!--tabla aca-->
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Metodo de ejecucion
+                            <span class="caret"></span>
+                        </a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="alert('  ');">Eliminacion</a></li>
+                    <li><a href="#">Pivoteo Parcial</a></li>
+                    <li><a href="#">Pivoteo Total</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="iterativos">
+        <div class="panel-heading">
+            <h1>Metodos Iterativos</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Variables</label>
+                <input type="number" id="numeroVariables" class="form-control" id="inputDefault">
+                <button onclick="matriz.generate()" id="generarMatriz" class="btn btn-default">Generar Matriz</button>
+            </div>
+            <div class="form-group">
+                <label>Matriz</label>
+                <div>
+
+                </div>
+                <div class="row">
+                    <table class="col-xs-11 table table-striped table-hover">
+                        <thead></thead>
+                        <tbody id="matrizEcuaciones"></tbody>
+                    </table>
+                </div>
+                <!--tabla aca-->
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Numero de iteraciones</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Tolerancia</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Lambda</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+
+            <div class="btn-group">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Metodo de ejecucion
+                            <span class="caret"></span>
+                        </a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="alert('  ');">Jacobi</a></li>
+                    <li><a href="#">Gauss Seidel</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="factorizacion">
+        <div class="panel-heading">
+            <h1>Factorizacion LU</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Variables</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <!-- Tabla aca -->
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Metodo de ejecucion
+                            <span class="caret"></span>
+                        </a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="alert('  ');">LU GAUSS</a></li>
+                    <li><a href="#">LU PARCIAL</a></li>
+                    <li><a href="#">Crout</a></li>
+                    <li><a href="#">Doolittle</a></li>
+                    <li><a href="#">Cholesky</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
