@@ -39,7 +39,7 @@ var matriz = {
 
     tablaInterpolacion: function () {
         $("#matrizInterpolacion").html("");
-        $("interpolacionTitulos").html("");
+        $("#interpolacionTitulos").html("");
         var variablesInterpolacion = $("#variablesInterpolacion").val();
         var row = '<td><input class"" type="number"></input></td><td><input class"" type="number"></input></td>'
         $("#interpolacionTitulos").append('<td>x</td><td>f(x)</td>');
