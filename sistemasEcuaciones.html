@@ -98,9 +98,20 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Variables</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control" id="variablesInterpolacion">
+                <button onclick="matriz.tablaInterpolacion()" id="generarMatriz" class="btn btn-default">Generar Matriz</button>
             </div>
             <div class="form-group">
+                <label>Matriz</label>
+                <div>
+
+                </div>
+                <div class="row">
+                    <table class="col-xs-11 table table-striped table-hover">
+                        <thead id="interpolacionTitulos"></thead>
+                        <tbody id="matrizInterpolacion"></tbody>
+                    </table>
+                </div>
                 <!--tabla aca-->
             </div>
             <div class="btn-group">
@@ -109,7 +120,7 @@
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="alert('  ');">Eliminacion</a></li>
+                    <li><a onclick="alert('');">Eliminacion</a></li>
                     <li><a href="#">Pivoteo Parcial</a></li>
                     <li><a href="#">Pivoteo Total</a></li>
                 </ul>
@@ -124,7 +135,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Variables</label>
-                <input type="number" id="numeroVariables" class="form-control" id="inputDefault">
+                <input type="number" id="numeroVariables" class="form-control">
                 <button onclick="matriz.generate()" id="generarMatriz" class="btn btn-default">Generar Matriz</button>
             </div>
             <div class="form-group">

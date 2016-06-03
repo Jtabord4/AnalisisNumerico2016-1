@@ -17,9 +17,9 @@ var matriz = {
             td = td + '<td><input class="inputMatriz" type="number"></input></td>';
             th = th + '<td>X' + (matriz.idVariable + 1) + '</td>'
             matriz.idVariable++;
-            /* if (i = variables) {
-                 th = th + '<td> B </td>';
-             }*/
+            /*if (matriz.idVariable = variables) {
+                th = th + '<td> B </td>';
+            }*/
         }
         if (variables > 0) {
             $("#variablesId").append(th);
@@ -37,22 +37,30 @@ var matriz = {
     },
 
 
+    tablaInterpolacion: function () {
+        $("#matrizInterpolacion").html("");
+        $("interpolacionTitulos").html("");
+        var variablesInterpolacion = $("#variablesInterpolacion").val();
+        var row = '<td><input class"" type="number"></input></td><td><input class"" type="number"></input></td>'
+        $("#interpolacionTitulos").append('<td>x</td><td>f(x)</td>');
+        for (var i = 0; i < variablesInterpolacion; i++) {
+            $("#matrizInterpolacion").append('<tr>' + row + '</tr>')
+
+        }
+    }
+
+
+}
+
+/*var tablaInterpolacion = {
+    idPuntos: 0,
+
+    generate: function () {
+
+    },
+
     getValue: function () {
 
     }
 
-
-}
-
-var tablaInterpolacion = {
-    idPuntos: 0,
-    
-    generate: function () {
-        
-    },
-    
-    getValue: function (){
-        
-    }
-    
-}
+}*/
