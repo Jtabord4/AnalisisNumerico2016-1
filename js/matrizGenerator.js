@@ -48,19 +48,4 @@ var matriz = {
 
         }
     }
-
-
 }
-
-/*var tablaInterpolacion = {
-    idPuntos: 0,
-
-    generate: function () {
-
-    },
-
-    getValue: function () {
-
-    }
-
-}*/
