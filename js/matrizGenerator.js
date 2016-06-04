@@ -9,16 +9,16 @@
 var matriz = {
     idVariable: 0,
 
-    generate: function (idMatriz, idTitulo, idInput) {
+    generate: function (idMatriz, idTitulo, idInput, className) {
         $(idMatriz).html("");
         $(idTitulo).html("");
         matriz.idVariable = 0;
         var variables = $(idInput).val();
 
-        var td = '<td><input class="inputMatriz" type="number"></input></td>'
+        var td = '<td><input class=' + className + ' type="number"></input></td>'
         var th = '<td>X' + matriz.idVariable + '</td>'
         for (var i = 0; i < variables; i++) {
-            td = td + '<td><input class="inputMatriz" type="number"></input></td>';
+            td = td + '<td><input class=' + className + ' type="number"></input></td>';
             th = th + '<td>X' + (matriz.idVariable + 1) + '</td>'
             matriz.idVariable++;
             /*if (matriz.idVariable = variables) {

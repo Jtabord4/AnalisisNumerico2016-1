@@ -3,19 +3,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/animatecss/3.5.1/animate.min.css"></script>
+    <!--  <script src="https://cdn.jsdelivr.net/animatecss/3.5.1/animate.min.css"></script>-->
     <script src="js/matrizGenerator.js"></script>
     <script src="js/captureData.js"></script>
     <script src="js/showData.js"></script>
-    <!--<script src="js/jquery.js"></script>-->
+
+
     <script src="js/main.js"></script>
     <style>
         input {
             width: 100%;
         }
-        
     </style>
 </head>
 
@@ -36,8 +37,8 @@
                     <a href="index.html" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
                     <a href="#sistemasHelp" data-toggle="modal" class="btn btn-info btn-sm">Help</a>
                 </div>
-                
-                
+
+
 
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
                     <ul class="nav navbar-nav">
@@ -55,25 +56,25 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">System of Linear Equations<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html">Direct Methods</a></li>
-                                    <ul>
-                                        <li><a href="#">Gaussian Elimination</a></li>
-                                        <li><a href="#">Partial Pivoting</a></li>
-                                        <li><a href="#">Complete Pivoting</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">Gaussian Elimination</a></li>
+                                    <li><a href="#">Partial Pivoting</a></li>
+                                    <li><a href="#">Complete Pivoting</a></li>
+                                </ul>
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#iterativos">Iterative Methods</a></li>
-                                    <ul>
-                                        <li><a href="#">Jacobi</a></li>
-                                        <li><a href="#">Gauss Seidel</a></li>
-                                    </ul>
-                                    
+                                <ul>
+                                    <li><a href="#">Jacobi</a></li>
+                                    <li><a href="#">Gauss Seidel</a></li>
+                                </ul>
+
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#factorizacion">LU Decomposition</a></li>
-                                    <ul>
-                                        <li><a href="#">LU GAUSS</a></li>
-                                        <li><a href="#">LU PARTIAL</a></li>
-                                        <li><a href="#">Crout</a></li>
-                                        <li><a href="#">Cholesky</a></li>
-                                        <li><a href="#">Doolittle</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">LU GAUSS</a></li>
+                                    <li><a href="#">LU PARTIAL</a></li>
+                                    <li><a href="#">Crout</a></li>
+                                    <li><a href="#">Cholesky</a></li>
+                                    <li><a href="#">Doolittle</a></li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -95,17 +96,19 @@
             </div>
         </nav>
     </div>
-    
+
     <div id="directos">
         <div class="panel-heading">
-            <h1 class="col-sm-5"><span class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Direct Methods</h1><a href="#"></a>
+            <h1 class="col-sm-5"><span class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Direct Methods</h1>
+            <a href="#"></a>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Number of Values</label>
                 <input type="text" class="form-control" id="inputDirectos">
                 <br>
-               <center> <button onclick="matriz.generate('#matrizDirectos', '#tituloDirectos', '#inputDirectos')" class="btn btn-default">Get Matrix</button></center>
+                <center> <button onclick="matriz.generate('#matrizDirectos', '#tituloDirectos', '#inputDirectos', 'directosMatrix')"
+                        class="btn btn-default">Get Matrix</button></center>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -122,7 +125,7 @@
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="capture.directos()">Gaussian Elimination</a></li>
+                    <li><a onclick="capture.directos('.directosMatrix')">Gaussian Elimination</a></li>
                     <li><a href="#">Partial Pivoting</a></li>
                     <li><a href="#">Complete Pivoting</a></li>
                 </ul>
@@ -138,7 +141,7 @@
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Number of Values</label>
                 <input type="number" id="numeroVariables" class="form-control">
-               <center><button onclick="matriz.generate('#matrizEcuaciones', '#variablesId', '#numeroVariables')" class="btn btn-default">Get Matrix</button></center>
+                <center><button onclick="matriz.generate('#matrizEcuaciones', '#variablesId', '#numeroVariables', 'iterativosMatrix')" class="btn btn-default">Get Matrix</button></center>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -169,7 +172,7 @@
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="alert('  ');">Jacobi</a></li>
+                    <li><a onclick="capture.iterativos('.iterativosMatrix');">Jacobi</a></li>
                     <li><a href="#">Gauss Seidel</a></li>
                 </ul>
             </div>
@@ -178,7 +181,7 @@
 
     <div id="factorizacion">
         <div id="rowTitulo" class="panel-heading">
-            <h1>LU Decomposition</h1><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a> 
+            <h1>LU Decomposition</h1><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
         </div>
         <div class="panel-body">
             <div class="form-group">
@@ -213,41 +216,41 @@
 
 </div>
 <div class="modal fade" id="sistemasHelp" role="dialog">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Help For System of linear Equations</h4>
-        </div>
-        <div class="modal-body">
-            <h2>Direct Methods</h2>
-            <p>Steps:
-                <br> 1. Fill the values field with the number of sistems of equations
-                <br> 2. Press get matrix
-                <br> 3. Use the equations given and fill the matrix 
-                <br> 4. Select the appropiate method
-                <br> 5. Run that bitch!
-                <br>
-            </p>
-            <h2>Iterative Methods</h2>
-            <p>Steps:
-                <br> 1. Fill the values field with the number of sistems of equations
-                <br> 2. Press get matrix
-                <br> 3. Use the equations given and fill the matrix    
-                <br> 4. Provide the number of iterations and TOL
-                <br> 5. Select the appropiate method
-                <br> 6. Run that bitch!
-                <br>
-            </p>
-            <h2>LU Decomposition</h2>
-            <p>Steps:
-                <br> 1. Fill the values field with the number of sistems of equations
-                <br> 2. Press get matrix
-                <br> 3. Use the equations given and fill the matrix 
-                <br> 4. Select the appropiate method
-                <br> 5. Run that bitch!
-                <br>
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
-        </div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Help For System of linear Equations</h4>
     </div>
+    <div class="modal-body">
+        <h2>Direct Methods</h2>
+        <p>Steps:
+            <br> 1. Fill the values field with the number of sistems of equations
+            <br> 2. Press get matrix
+            <br> 3. Use the equations given and fill the matrix
+            <br> 4. Select the appropiate method
+            <br> 5. Run that bitch!
+            <br>
+        </p>
+        <h2>Iterative Methods</h2>
+        <p>Steps:
+            <br> 1. Fill the values field with the number of sistems of equations
+            <br> 2. Press get matrix
+            <br> 3. Use the equations given and fill the matrix
+            <br> 4. Provide the number of iterations and TOL
+            <br> 5. Select the appropiate method
+            <br> 6. Run that bitch!
+            <br>
+        </p>
+        <h2>LU Decomposition</h2>
+        <p>Steps:
+            <br> 1. Fill the values field with the number of sistems of equations
+            <br> 2. Press get matrix
+            <br> 3. Use the equations given and fill the matrix
+            <br> 4. Select the appropiate method
+            <br> 5. Run that bitch!
+            <br>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
+    </div>
+</div>

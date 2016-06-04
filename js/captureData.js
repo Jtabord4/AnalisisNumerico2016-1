@@ -17,17 +17,17 @@ var capture = {
         });
         //objeto json
         var searchOut = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
+            '"eq"': dataIncremental[0],
+            '"inicio"': dataIncremental[1],
+            '"iteraciones"': dataIncremental[3],
+            '"delta"': dataIncremental[2],
 
         }
         console.log(searchOut)
 
         //envio de datos
         $.ajax({
-            url: '...',
+            url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
             type: 'POST',
             data: JSON.stringify(searchOut),
             contentType: 'application/json',
@@ -124,10 +124,9 @@ var capture = {
 
     },
 
-    directos: function () {
+    directos: function (className) {
         var directosData = [];
-        var row = []
-        $('.inputMatriz').each(function () {
+        $(className).each(function () {
             var data = ($(this).val());
             directosData.push(data)
         });
@@ -144,9 +143,10 @@ var capture = {
                 }
 
                 matrix[k].push(list[i]);
+ 
             }
 
-            console.log(matrix);
+
 
         }
 
@@ -171,6 +171,53 @@ var capture = {
                 show.fijo(JSON.parse(response))
             }
         });
+
+    },
+    iterativos: function (className) {
+        var iterativosData = [];
+        $(className).each(function () {
+            var data = ($(this).val());
+            iterativosData.push(data)
+        });
+
+        listToMatrix1(iterativosData, (matriz.idVariable + 1))
+
+        function listToMatrix1(list, elementsPerSubArray) {
+            var matrix = [], i, k;
+
+            for (i = 0, k = -1; i < list.length; i++) {
+                if (i % elementsPerSubArray === 0) {
+                    k++;
+                    matrix[k] = [];
+                }
+
+                matrix[k].push(list[i]);
+            }
+
+        }
+
+        //console.log(directosData);
+
+        /*var directoOutput = {
+            'eq': dataIncremental[0],
+            'inicio': dataIncremental[1],
+            'iteraciones': dataIncremental[3],
+            'delta': dataIncremental[2],
+
+        }*/
+
+        $.ajax({
+            url: '...',
+            type: 'POST',
+            data: JSON.stringify(fijoOutput),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                //mostrar resultado
+                show.fijo(JSON.parse(response))
+            }
+        });
+
 
     }
 
