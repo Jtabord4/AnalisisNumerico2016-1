@@ -48,10 +48,11 @@ var capture = {
         });
 
         var bisectionOut = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
+            '"eq"': dataIncremental[0],
+            '"x0"': dataIncremental[1],
+            '"x1"': dataIncremental[2],
+            '"iteraciones"': dataIncremental[3],
+            '"tolerancia"': dataIncremental[4],
 
         }
 
@@ -135,6 +136,7 @@ var capture = {
 
         function listToMatrix(list, elementsPerSubArray) {
             var matrix = [], i, k;
+            var b = [];
 
             for (i = 0, k = -1; i < list.length; i++) {
                 if (i % elementsPerSubArray === 0) {
@@ -143,7 +145,15 @@ var capture = {
                 }
 
                 matrix[k].push(list[i]);
- 
+
+
+            }
+
+            for (var i = 0; i < matrix.length; i++) {
+                b.push(matrix[i][matriz.idVariable]);
+                
+
+
             }
 
 
