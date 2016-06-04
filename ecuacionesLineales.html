@@ -6,6 +6,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/captureData.js"></script>
+    <script src="js/showData.js"></script>
 </head>
 
 <div class="container">
@@ -107,9 +108,10 @@
                 <input type="number" placeholder="100" class="form-control searchIn" id="inputDefault">
             </div>
             <center><a href="#" onclick="capture.busquedaIncremental()" class="btn btn-primary">Execute</a></center>
+            <br>
             <div class="form-group">
-                <label class="control-label" for="resultadoSearch">Resultado</label>
-                
+                <label class="control-label">Resultado</label>
+                <input id="resultadoSearch"></input>
             </div>
         </div>
     </div>
@@ -122,27 +124,27 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Function</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control bisection" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Initial Value</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control bisection" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Final Value</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control bisection" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Iterations</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control bisection" id="inputDefault">
             </div>
             <div class="form-group">
-                <label class="control-label" for="inputDefault">Tolerancia</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <label class="control-label" for="inputDefault">TOL</label>
+                <input type="number" class="form-control bisection" id="inputDefault">
             </div>
             <div class="btn-group">
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Metodo de ejecucion
+                        Execute Methods
                         <span class="caret"></span>
                     </a>
                 <ul class="dropdown-menu">
@@ -150,6 +152,11 @@
                     <li><a href="#">False Position</a></li>
                     <li><a href="#">Secant</a></li>
                 </ul>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="control-label">Resultado</label>
+                <input id="resultadoBisection"></input>
             </div>
         </div>
     </div>
@@ -161,19 +168,19 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Function</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control newton" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Initial Value</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control newton" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Iterations</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control newton" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Tolerancia</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control newton" id="inputDefault">
             </div>
             <div class="btn-group">
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -185,6 +192,11 @@
                     <li><a href="#">Multiple Roots</a></li>
                 </ul>
             </div>
+            <br>
+            <div class="form-group">
+                <label class="control-label">Resultado</label>
+                <input id="resultadoNewton"></input>
+            </div>
         </div>
     </div>
 
@@ -195,24 +207,29 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Function F</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control fijo" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Function G</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control fijo" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Initial Value</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control fijo" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Iterations</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control fijo" id="inputDefault">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Tolerancia</label>
-                <input type="number" class="form-control" id="inputDefault">
+                <input type="number" class="form-control fijo" id="inputDefault">
             </div>
             <center><a href="#" class="btn btn-primary">Execute</a></center>
+            <br>
+            <div class="form-group">
+                <label class="control-label">Resultado</label>
+                <input id="resultadoFijo"></input>
+            </div>
         </div>
     </div>
