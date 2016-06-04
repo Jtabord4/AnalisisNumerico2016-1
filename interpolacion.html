@@ -88,13 +88,13 @@
             
             <div id="iterativos">
                 <div class="panel-heading">
-                    <h1>Interpolacion</h1>
+                    <h1>Linear Interpolation</h1>
                 </div>
                 <div class="panel-body">                  
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Puntos</label>
+                        <label class="control-label" for="inputDefault">Coordinates</label>
                         <input type="text" class="form-control" id="variablesInterpolacion">
-                        <button onclick="matriz.tablaInterpolacion()" id="generarTabla" class="btn btn-default">Generar tabla</button>
+                        <button onclick="matriz.tablaInterpolacion()" id="generarTabla" class="btn btn-default">Generate table</button>
                         <!--tabla aca-->
                     </div>
                     <div class="form-group">
@@ -109,19 +109,19 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Valor a interpolar</label>
+                        <label class="control-label" for="inputDefault">Value</label>
                         <input type="text" class="form-control" id="inputDefault">
                     </div>
                     <div class="btn-group">
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Metodo de ejecucion
+                            Select Method
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a>Lagrange</a></li>
                             <li><a href="#">Newton</a></li>
-                            <li><a href="#">Spline Lineal</a></li>
-                            <li><a href="#">Spline Cubico</a></li>
+                            <li><a href="#">Linear Spline</a></li>
+                            <li><a href="#">Cubic Spline</a></li>
                         </ul>
                     </div>
                 </div>
