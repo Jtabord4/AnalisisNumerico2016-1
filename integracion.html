@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="js/captureData2.js"></script>
     </head>
     
     <div class="container">
@@ -90,19 +91,19 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Function</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control integracionIn" placeholder="">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Lower Limite</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control integracionIn" id="inputDefault">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Upper Limite</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control integracionIn" id="inputDefault">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Iterations</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control integracionIn" id="inputDefault">
                     </div>
                 </div>
                 <div class="btn-group">
@@ -111,8 +112,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a>Trapezoid</a></li>
-                            <li><a href="#">Simpson 1/3</a></li>
+                            <li><a onclick="capture2.integracion()">Trapezoid</a></li>
+                            <li><a onclick="capture2.integracion()">Simpson 1/3</a></li>
                         </ul>
                     </div>
             </div>            
