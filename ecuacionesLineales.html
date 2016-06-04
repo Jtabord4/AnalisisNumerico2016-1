@@ -1,15 +1,15 @@
-    <head>
-        <title>Analisis Numerico</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    </head>
-    
-     <div class="container">
+<head>
+    <title>Analisis Numerico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
 
-      <div>
+<div class="container">
+
+    <div>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -24,8 +24,8 @@
                     <a href="index.html" class="btn btn-info btn-sm">Home</a>
                     <a href="" class="btn btn-info btn-sm">Help</a>
                 </div>
-                
-                
+
+
 
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
                     <ul class="nav navbar-nav">
@@ -43,25 +43,25 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">System of Linear Equations<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html">Direct Methods</a></li>
-                                    <ul>
-                                        <li><a href="#">Gaussian Elimination</a></li>
-                                        <li><a href="#">Partial Pivoting</a></li>
-                                        <li><a href="#">Complete Pivoting</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">Gaussian Elimination</a></li>
+                                    <li><a href="#">Partial Pivoting</a></li>
+                                    <li><a href="#">Complete Pivoting</a></li>
+                                </ul>
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#iterativos">Iterative Methods</a></li>
-                                    <ul>
-                                        <li><a href="#">Jacobi</a></li>
-                                        <li><a href="#">Gauss Seidel</a></li>
-                                    </ul>
-                                    
+                                <ul>
+                                    <li><a href="#">Jacobi</a></li>
+                                    <li><a href="#">Gauss Seidel</a></li>
+                                </ul>
+
                                 <li class="dropdown-header"><a href="sistemasEcuaciones.html#factorizacion">LU Decomposition</a></li>
-                                    <ul>
-                                        <li><a href="#">LU GAUSS</a></li>
-                                        <li><a href="#">LU PARTIAL</a></li>
-                                        <li><a href="#">Crout</a></li>
-                                        <li><a href="#">Cholesky</a></li>
-                                        <li><a href="#">Doolittle</a></li>
-                                    </ul>
+                                <ul>
+                                    <li><a href="#">LU GAUSS</a></li>
+                                    <li><a href="#">LU PARTIAL</a></li>
+                                    <li><a href="#">Crout</a></li>
+                                    <li><a href="#">Cholesky</a></li>
+                                    <li><a href="#">Doolittle</a></li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -82,132 +82,136 @@
                 </div>
             </div>
         </nav>
-      </div>
-  
-    <div id="busquedaIncremental">
-            <div class="panel-heading">
-                <h1>Busqueda incremental</h1>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Funcion</label>
-                    <input type="text" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Valor Inicial</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Delta</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Iteraciones</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <center><a href="#" class="btn btn-primary">Ejecutar</a></center>
-            </div>
-        </div>
-        
-        
-   <div id="biseccionLineal">
-            <div class="panel-heading">
-                <h1>Biseccion | Secante | Regla Falsa </h1>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Funcion</label>
-                    <input type="text" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Valor Inferior(Inicial)</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Valor Superior</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Iteraciones</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Tolerancia</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="btn-group">
-                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Metodo de ejecucion
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a onclick="alert('hola mundo');">Biseccion</a></li>
-                        <li><a href="#">Regla Falsa</a></li>
-                        <li><a href="#">Secante</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-         <div id="newton">
-            <div class="panel-heading">
-                <h1>Newton | Raices Multiples</h1>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Funcion</label>
-                    <input type="text" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Valor Inicial</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Iteraciones</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Tolerancia</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="btn-group">
-                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Metodo de ejecucion
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a onclick="alert('  ');">Newton</a></li>
-                        <li><a href="#">Raices multiples</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    </div>
 
-        <div id="puntoFijo">
-            <div class="panel-heading">
-                <h1>Punto Fijo</h1>
+    <div id="busquedaIncremental">
+        <div class="panel-heading">
+            <h1>Incremental Search</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Function</label>
+                <input type="text" placeholder="5 * x + 3" class="form-control" id="inputDefault">
             </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Funcion f</label>
-                    <input type="text" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Funcion g</label>
-                    <input type="text" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Valor Inicial</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Iteraciones</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="inputDefault">Tolerancia</label>
-                    <input type="number" class="form-control" id="inputDefault">
-                </div>
-                <center><a href="#" class="btn btn-primary">Ejecutar</a></center>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Initial Value</label>
+                <input type="number" placeholder="0.5" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Delta</label>
+                <input type="number" placeholder="0.1" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Iterations</label>
+                <input type="number" placeholder="100" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Resultado</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <center><a href="#" class="btn btn-primary">Execute</a></center>
+        </div>
+    </div>
+
+
+    <div id="biseccionLineal">
+        <div class="panel-heading">
+            <h1>Bisection | Secant | False Position</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Function</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Initial Value</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Final Value</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Iterations</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Tolerancia</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Metodo de ejecucion
+                        <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="alert('hola mundo');">Bisection</a></li>
+                    <li><a href="#">False Position</a></li>
+                    <li><a href="#">Secant</a></li>
+                </ul>
             </div>
         </div>
+    </div>
+
+    <div id="newton">
+        <div class="panel-heading">
+            <h1>Newton | Multiple Roots</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Function</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Initial Value</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Iterations</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Tolerancia</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Execute Method
+                        <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="alert('  ');">Newton</a></li>
+                    <li><a href="#">Multiple Roots</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="puntoFijo">
+        <div class="panel-heading">
+            <h1>Fixed Point</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Function F</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Function G</label>
+                <input type="text" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Initial Value</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Iterations</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Tolerancia</label>
+                <input type="number" class="form-control" id="inputDefault">
+            </div>
+            <center><a href="#" class="btn btn-primary">Execute</a></center>
+        </div>
+    </div>
