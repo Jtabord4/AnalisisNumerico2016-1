@@ -7,6 +7,7 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/captureData.js"></script>
     <script src="js/showData.js"></script>
+    <script src="js/cambioModal.js"></script>
 </head>
 
 <div class="container">
@@ -24,7 +25,7 @@
                     </button>
                     <a class="navbar-brand" href="#">Numerical Analysis</a>
                     <a href="index.html" class="btn btn-info btn-sm">Home</a>
-                    <a href="" class="btn btn-info btn-sm">Help</a>
+                    <a href="#linealesHelp" data-toggle="modal" class="btn btn-info btn-sm">Help</a>
                 </div>
 
 
@@ -88,7 +89,8 @@
 
     <div id="busquedaIncremental">
         <div class="panel-heading">
-            <h1>Incremental Search</h1>
+            <h1><span onclick="cambio.cambioModal('busqueda')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Incremental Search </h1>
+            
         </div>
         <div class="panel-body">
             <div class="form-group">
@@ -109,8 +111,9 @@
             </div>
             <center><a href="#" onclick="capture.busquedaIncremental()" class="btn btn-primary">Execute</a></center>
             <br>
+            <br>
             <div class="form-group">
-                <label class="control-label">Resultado</label>
+                <label class="control-label">Output</label>
                 <input id="resultadoSearch"></input>
             </div>
         </div>
@@ -119,7 +122,7 @@
 
     <div id="biseccionLineal">
         <div class="panel-heading">
-            <h1>Bisection | Secant | False Position</h1>
+            <h1><span onclick="cambio.cambioModal('grupo1')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Bisection | Secant | False Position</h1>
         </div>
         <div class="panel-body">
             <div class="form-group">
@@ -154,8 +157,9 @@
                 </ul>
             </div>
             <br>
+            <br>
             <div class="form-group">
-                <label class="control-label">Resultado</label>
+                <label class="control-label">Output</label>
                 <input id="resultadoBisection"></input>
             </div>
         </div>
@@ -193,8 +197,9 @@
                 </ul>
             </div>
             <br>
+            <br>
             <div class="form-group">
-                <label class="control-label">Resultado</label>
+                <label class="control-label">Output</label>
                 <input id="resultadoNewton"></input>
             </div>
         </div>
@@ -228,8 +233,72 @@
             <center><a href="#" class="btn btn-primary">Execute</a></center>
             <br>
             <div class="form-group">
-                <label class="control-label">Resultado</label>
+                <label class="control-label">Output</label>
                 <input id="resultadoFijo"></input>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="linealesHelp" role="dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Help For System of linear Equations</h4>
+        </div>
+        <div class="modal-body">
+            <h2>Incremental Search</h2>
+            <p>Steps:
+                <br> 1. Use the function given
+                <br> 2. Define the initial value 
+                <br> 3. Provide the number of iterations and delta
+                <br> 4. Run that bitch!
+                <br> 5. Get the intervals
+                <br>
+            </p>
+            <h2>Bisection | Secant | False Position</h2>
+            <p>Steps:
+                <br> 1. Use the function given
+                <br> 2. Define the interval between the initial or lower value and the upper or final value
+                <br> 3. Provide the number of iterations and TOL    
+                <br> 4. Select the appropiate method
+                <br> 5. Run that bitch!
+                <br>
+            </p>
+            <h2>Newton | Multiple Roots</h2>
+            <p>Steps:
+                <br> 1. Use the function given
+                <br> 2. Define the initial value
+                <br> 3. Provide the number of iterations and TOL
+                <br> 4. Select the appropiate method
+                <br> 5. Run that bitch!
+                <br>
+            </p>
+            <h2>Fixed Point</h2>
+            <p>Steps:
+                <br> 1. Use the function given
+                <br> 2. Get a new function g out of the function f, depending on the selected x
+                <br> 3. Define the initial value
+                <br> 3. Provide the number of iterations and TOL 
+                <br> 4. Select the appropiate method
+                <br> 5. Run that bitch!
+                <br>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
+        </div>
+    </div>
+    <div id="metodosModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="titulo" class="modal-title"></h4>
+            </div>
+            <div id="texto" class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
             </div>
         </div>
     </div>
