@@ -12,10 +12,10 @@ var capture2 = {
         });
         //objeto json
         var searchOut = {
-            'eq': dataIntegracion[0],
-            'inicial': dataIntegracion[1],
-            'final': dataIntegracion[2],
-            'iteraciones': dataIntegracion[3],
+            '"eq"': dataIntegracion[0],
+            '"inicial"': dataIntegracion[1],
+            '"final"': dataIntegracion[2],
+            '"iteraciones"': dataIntegracion[3],
 
         }
         console.log(searchOut)
