@@ -122,6 +122,56 @@ var capture = {
             }
         });
 
+    },
+
+    directos: function () {
+        var directosData = [];
+        var row = []
+        $('.inputMatriz').each(function () {
+            var data = ($(this).val());
+            directosData.push(data)
+        });
+
+        listToMatrix(directosData, (matriz.idVariable + 1))
+
+        function listToMatrix(list, elementsPerSubArray) {
+            var matrix = [], i, k;
+
+            for (i = 0, k = -1; i < list.length; i++) {
+                if (i % elementsPerSubArray === 0) {
+                    k++;
+                    matrix[k] = [];
+                }
+
+                matrix[k].push(list[i]);
+            }
+
+            console.log(matrix);
+
+        }
+
+        //console.log(directosData);
+
+        /*var directoOutput = {
+            'eq': dataIncremental[0],
+            'inicio': dataIncremental[1],
+            'iteraciones': dataIncremental[3],
+            'delta': dataIncremental[2],
+
+        }*/
+
+        $.ajax({
+            url: '...',
+            type: 'POST',
+            data: JSON.stringify(fijoOutput),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                //mostrar resultado
+                show.fijo(JSON.parse(response))
+            }
+        });
+
     }
 
 
