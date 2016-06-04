@@ -1,166 +1,167 @@
 <head>
-        <title>Analisis Numerico</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="js/matrizGenerator.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/cambioModal.js"></script>
-    </head>
-    
-       <div class="container">
+    <title>Analisis Numerico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/darkly/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/matrizGenerator.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cambioModal.js"></script>
+</head>
 
-            <div>
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                                aria-expanded="false">
+<div class="container">
+
+    <div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Numerical Analysis</a>
-                            <a href="index.html" class="btn btn-info btn-sm">Home</a>
-                            <a href="#interpolacionHelp" data-toggle="modal" class="btn btn-info btn-sm">Help</a>
-                        </div>
-                        
-                        
-
-                        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
-                            <ul class="nav navbar-nav">
-                                <li><a href="ecuacionesLineales.html">Incremental Search</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Linear equations <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="ecuacionesLineales.html#biseccionLineal">Bisection | Secant | False Position </a></li>
-                                        <li><a href="ecuacionesLineales.html#newton">Newton-Raphson | Multiple Roots</a></li>
-                                        <li><a href="ecuacionesLineales.html#puntoFijo">Fixed Point</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">System of Linear Equations<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li class="dropdown-header"><a href="sistemasEcuaciones.html">Direct Methods</a></li>
-                                            <ul>
-                                                <li><a href="#">Gaussian Elimination</a></li>
-                                                <li><a href="#">Partial Pivoting</a></li>
-                                                <li><a href="#">Complete Pivoting</a></li>
-                                            </ul>
-                                        <li class="dropdown-header"><a href="sistemasEcuaciones.html#iterativos">Iterative Methods</a></li>
-                                            <ul>
-                                                <li><a href="#">Jacobi</a></li>
-                                                <li><a href="#">Gauss Seidel</a></li>
-                                            </ul>
-                                            
-                                        <li class="dropdown-header"><a href="sistemasEcuaciones.html#factorizacion">LU Decomposition</a></li>
-                                            <ul>
-                                                <li><a href="#">LU GAUSS</a></li>
-                                                <li><a href="#">LU PARTIAL</a></li>
-                                                <li><a href="#">Crout</a></li>
-                                                <li><a href="#">Cholesky</a></li>
-                                                <li><a href="#">Doolittle</a></li>
-                                            </ul>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Linear Interpolation<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="interpolacion.html">Newton | Lagrange | Linear Spline | Cubic Spline</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Numerical Integration<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="integracion.html">Trapezoid</a></li>
-                                        <li><a href="integracion.html">Simpson 1/3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#equipo" data-toggle="modal">Students</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            
-            <div id="interpolacion">
-                <div class="panel-heading">
-                    <h1><span onclick="cambio.cambioModal('interpolacion')" href="ecuacionesLineales.html#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>Linear Interpolation</h1>
+                    <a class="navbar-brand" href="#">Numerical Analysis</a>
+                    <a href="index.html" class="btn btn-info btn-sm">Home</a>
+                    <a href="#interpolacionHelp" data-toggle="modal" class="btn btn-info btn-sm">Help</a>
                 </div>
-                <div class="panel-body">                  
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Coordinates</label>
-                        <input type="text" class="form-control" id="variablesInterpolacion">
-                        <button onclick="matriz.tablaInterpolacion()" id="generarTabla" class="btn btn-default">Generate table</button>
-                        <!--tabla aca-->
-                    </div>
-                    <div class="form-group">
-                        <div>
 
-                        </div>
-                        <div class="row">
-                            <table class="col-xs-11 table table-striped table-hover">
-                                <thead id="interpolacionTitulos"></thead>
-                                <tbody id="matrizInterpolacion"></tbody>
-                            </table>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">Value</label>
-                        <input type="text" class="form-control" id="inputDefault">
-                    </div>
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+
+
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+                        <li><a href="ecuacionesLineales.html">Incremental Search</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Linear equations <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="ecuacionesLineales.html#biseccionLineal">Bisection | Secant | False Position </a></li>
+                                <li><a href="ecuacionesLineales.html#newton">Newton-Raphson | Multiple Roots</a></li>
+                                <li><a href="ecuacionesLineales.html#puntoFijo">Fixed Point</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">System of Linear Equations<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"><a href="sistemasEcuaciones.html">Direct Methods</a></li>
+                                <ul>
+                                    <li><a href="#">Gaussian Elimination</a></li>
+                                    <li><a href="#">Partial Pivoting</a></li>
+                                    <li><a href="#">Complete Pivoting</a></li>
+                                </ul>
+                                <li class="dropdown-header"><a href="sistemasEcuaciones.html#iterativos">Iterative Methods</a></li>
+                                <ul>
+                                    <li><a href="#">Jacobi</a></li>
+                                    <li><a href="#">Gauss Seidel</a></li>
+                                </ul>
+
+                                <li class="dropdown-header"><a href="sistemasEcuaciones.html#factorizacion">LU Decomposition</a></li>
+                                <ul>
+                                    <li><a href="#">LU GAUSS</a></li>
+                                    <li><a href="#">LU PARTIAL</a></li>
+                                    <li><a href="#">Crout</a></li>
+                                    <li><a href="#">Cholesky</a></li>
+                                    <li><a href="#">Doolittle</a></li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Linear Interpolation<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="interpolacion.html">Newton | Lagrange | Linear Spline | Cubic Spline</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Numerical Integration<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="integracion.html">Trapezoid</a></li>
+                                <li><a href="integracion.html">Simpson 1/3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#equipo" data-toggle="modal">Students</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="interpolacion">
+        <div class="panel-heading">
+            <h1><span onclick="cambio.cambioModal('interpolacion')" href="ecuacionesLineales.html#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>Linear Interpolation</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label" for="inputDefault">Coordinates</label>
+                <input type="text" class="form-control" id="variablesInterpolacion">
+                <button onclick="matriz.tablaInterpolacion()" id="generarTabla" class="btn btn-default">Generate table</button>
+                <!--tabla aca-->
+            </div>
+            <div class="form-group">
+                <div>
+
+                </div>
+                <div class="row">
+                    <table class="col-xs-11 table table-striped table-hover">
+                        <thead id="interpolacionTitulos"></thead>
+                        <tbody id="matrizInterpolacion"></tbody>
+                    </table>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputDefault">Value</label>
+                    <input type="text" class="form-control" id="inputDefault">
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Select Method
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a>Lagrange</a></li>
-                            <li><a href="#">Newton</a></li>
-                            <li><a href="#">Linear Spline</a></li>
-                            <li><a href="#">Cubic Spline</a></li>
-                        </ul>
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a>Lagrange</a></li>
+                        <li><a href="#">Newton</a></li>
+                        <li><a href="#">Linear Spline</a></li>
+                        <li><a href="#">Cubic Spline</a></li>
+                    </ul>
                 </div>
-              </div>    
-        </div>
-        <div class="modal fade" id="integracionHelp" role="dialog">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Help</h4>
-            </div>
-            <div class="modal-body">
-                <h2>Interpolation</h2>
-                <p>Steps:
-                    <br> 1. Difine number of points
-                    <br> 2. Use coordinates given
-                    <br> 3. Provide value you want to Interpolate 
-                    <br> 4. Select the appropiate method
-                    <br> 5. Run it!
-                    <br>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
             </div>
         </div>
-        <div id="metodosModal" class="modal">
+    </div>
+    <div class="modal fade" id="integracionHelp" role="dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Help</h4>
+        </div>
+        <div class="modal-body">
+            <h2>Interpolation</h2>
+            <p>Steps:
+                <br> 1. Difine number of points
+                <br> 2. Use coordinates given
+                <br> 3. Provide value you want to Interpolate
+                <br> 4. Select the appropiate method
+                <br> 5. Run it!
+                <br>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
+        </div>
+    </div>
+    <div id="metodosModal" class="modal">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 id="titulo" class="modal-title"></h4>
-            </div>
-            <div id="texto" class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="titulo" class="modal-title"></h4>
+                </div>
+                <div id="texto" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
