@@ -7,6 +7,7 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="js/matrizGenerator.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/cambioModal.js"></script>
     </head>
     
        <div class="container">
@@ -86,9 +87,9 @@
                 </nav>
             </div>
             
-            <div id="iterativos">
+            <div id="interpolacion">
                 <div class="panel-heading">
-                    <h1>Linear Interpolation</h1>
+                    <h1><span onclick="cambio.cambioModal('interpolacion')" href="ecuacionesLineales.html#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>Linear Interpolation</h1>
                 </div>
                 <div class="panel-body">                  
                     <div class="form-group">
@@ -127,3 +128,39 @@
                 </div>
               </div>    
         </div>
+        <div class="modal fade" id="integracionHelp" role="dialog">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <h2>Interpolation</h2>
+                <p>Steps:
+                    <br> 1. Difine number of points
+                    <br> 2. Use coordinates given
+                    <br> 3. Provide value you want to Interpolate 
+                    <br> 4. Select the appropiate method
+                    <br> 5. Run it!
+                    <br>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
+            </div>
+        </div>
+        <div id="metodosModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="titulo" class="modal-title"></h4>
+            </div>
+            <div id="texto" class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
