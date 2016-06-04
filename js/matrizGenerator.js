@@ -2,14 +2,18 @@
 /*Matriz Generator*/
 
 
+
+
+
+
 var matriz = {
     idVariable: 0,
 
-    generate: function () {
-        $("#matrizEcuaciones").html("");
-        $("#variablesId").html("");
+    generate: function (idMatriz, idTitulo, idInput) {
+        $(idMatriz).html("");
+        $(idTitulo).html("");
         matriz.idVariable = 0;
-        var variables = $("#numeroVariables").val();
+        var variables = $(idInput).val();
 
         var td = '<td><input class="inputMatriz" type="number"></input></td>'
         var th = '<td>X' + matriz.idVariable + '</td>'
@@ -22,11 +26,11 @@ var matriz = {
             }*/
         }
         if (variables > 0) {
-            $("#variablesId").append(th);
+            $(idTitulo).append(th);
             // td * (variables + 1) 
 
             for (var i = 0; i < variables; i++) {
-                $("#matrizEcuaciones").append('<tr>' + td + '</tr>')
+                $(idMatriz).append('<tr>' + td + '</tr>')
 
             }
 

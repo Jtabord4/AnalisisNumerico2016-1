@@ -100,10 +100,17 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Variables</label>
-                <input type="text" class="form-control" id="variablesInterpolacion">
-                
+                <input type="text" class="form-control" id="inputDirectos">
+                <button onclick="matriz.generate('#matrizDirectos', '#tituloDirectos', '#inputDirectos')" class="btn btn-default">Generar Matriz</button>
             </div>
             <div class="form-group">
+                <label>Matriz</label>
+                <div class="row">
+                    <table class="col-xs-11 table table-striped table-hover">
+                        <thead id="tituloDirectos"></thead>
+                        <tbody id="matrizDirectos"></tbody>
+                    </table>
+                </div>
                 <!--tabla aca-->
             </div>
             <div class="btn-group">
@@ -128,13 +135,10 @@
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Variables</label>
                 <input type="number" id="numeroVariables" class="form-control">
-                <button onclick="matriz.generate()" id="generarMatriz" class="btn btn-default">Generar Matriz</button>
+                <button onclick="matriz.generate('#matrizEcuaciones', '#variablesId', '#numeroVariables')" class="btn btn-default">Generar Matriz</button>
             </div>
             <div class="form-group">
                 <label>Matriz</label>
-                <div>
-
-                </div>
                 <div class="row">
                     <table class="col-xs-11 table table-striped table-hover">
                         <thead id="variablesId"></thead>
@@ -177,9 +181,17 @@
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Variables</label>
-                <input type="text" class="form-control" id="inputDefault">
+                <input type="text" class="form-control" id="variablesLU">
+                <button onclick="matriz.generate('#matrizLU', '#titulosLU', '#variablesLU')" class="btn btn-default">Generar Matriz</button>
             </div>
             <div class="form-group">
+                <label>Matriz</label>
+                <div class="row">
+                    <table class="col-xs-11 table table-striped table-hover">
+                        <thead id="titulosLU"></thead>
+                        <tbody id="matrizLU"></tbody>
+                    </table>
+                </div>
                 <!-- Tabla aca -->
             </div>
             <div class="btn-group">
