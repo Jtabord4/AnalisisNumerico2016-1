@@ -152,27 +152,24 @@
 
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Iterations</label>
-                <input type="text" placeholder="100" class="form-control" id="inputDefault">
+                <input type="text" placeholder="100" class="form-control" id="iteracionesIterativos">
             </div>
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Tol</label>
-                <input type="text" placeholder="0.0001" class="form-control" id="inputDefault">
+                <input type="text" placeholder="0.0001" class="form-control" id="toleranciaIterativos">
             </div>
-            <div class="form-group">
-                <label class="control-label" for="inputDefault">Lambda</label>
-                <input type="text" placeholder="0.5" class="form-control" id="inputDefault">
-            </div>
-
             <div class="btn-group">
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Select method
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="capture.iterativos('.iterativosMatrix');">Jacobi</a></li>
+                    <li><a onclick="capture.iterativosJacobi('.iterativosMatrix');">Jacobi</a></li>
                     <li><a href="#">Gauss Seidel</a></li>
                 </ul>
             </div>
+            <label>Output</label>
+            <div id="iterativosOutput"></div>
         </div>
     </div>
 

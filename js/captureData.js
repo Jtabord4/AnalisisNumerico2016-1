@@ -208,11 +208,9 @@ var capture = {
 
             for (var i = 0; i < matrix.length; i++) {
                 b.push(matrix[i][matriz.idVariable]);
-
-
+                matrix[i].pop();
 
             }
-
 
 
         }
@@ -240,8 +238,12 @@ var capture = {
         });
 
     },
-    iterativos: function (className) {
+    iterativosJacobi: function (className) {
         var iterativosData = [];
+        var A = [];
+        var b = [];
+        var iteraciones = $("#iteracionesIterativos").val();
+        var tolerancia = $("#toleranciaIterativos").val();
         $(className).each(function () {
             var data = ($(this).val());
             iterativosData.push(data)
@@ -251,6 +253,7 @@ var capture = {
 
         function listToMatrix1(list, elementsPerSubArray) {
             var matrix = [], i, k;
+            var bi = [];
 
             for (i = 0, k = -1; i < list.length; i++) {
                 if (i % elementsPerSubArray === 0) {
@@ -260,28 +263,34 @@ var capture = {
 
                 matrix[k].push(list[i]);
             }
+            for (var i = 0; i < matrix.length; i++) {
+                bi.push(matrix[i][matriz.idVariable]);
+                matrix[i].pop();
+            }
+            A = matrix;
+            b = bi;
+            
 
         }
 
         //console.log(directosData);
 
-        /*var directoOutput = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
-
-        }*/
+        var jacobiOutput = {
+            '"A"': A,
+            '"b"': b,
+            '"iteraciones"': iteraciones,
+            '"tolerancia"': tolerancia
+        }
 
         $.ajax({
-            url: '...',
+            url: 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi/',
             type: 'POST',
-            data: JSON.stringify(fijoOutput),
+            data: JSON.stringify(jacobiOutput),
             contentType: 'application/json',
             dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.fijo(JSON.parse(response))
+                show.jacobi(JSON.parse(response))
             }
         });
 
