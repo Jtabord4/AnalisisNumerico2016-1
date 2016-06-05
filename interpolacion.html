@@ -7,6 +7,7 @@
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/matrizGenerator.js"></script>
+    <script src="js/captureData.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cambioModal.js"></script>
 </head>
@@ -119,7 +120,7 @@
                             <span class="caret"></span>
                         </a>
                     <ul class="dropdown-menu">
-                        <li><a>Lagrange</a></li>
+                        <li><a onclick="capture.interpolacion('.interpolacionMatrix')" >Lagrange</a></li>
                         <li><a href="#">Newton</a></li>
                         <li><a href="#">Linear Spline</a></li>
                         <li><a href="#">Cubic Spline</a></li>

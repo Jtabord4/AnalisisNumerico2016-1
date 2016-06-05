@@ -151,7 +151,7 @@ var capture = {
 
             for (var i = 0; i < matrix.length; i++) {
                 b.push(matrix[i][matriz.idVariable]);
-                
+
 
 
             }
@@ -230,7 +230,7 @@ var capture = {
 
 
     },
-    
+
     integracion: function () {
         //arreglo de datos
         var dataIntegracion = [];
@@ -264,6 +264,53 @@ var capture = {
                 show.integracion(JSON.parse(response))
             }
         });
+
+    },
+    interpolacion: function (className) {
+        var interpolacionData = [];
+        $(className).each(function () {
+            var data = ($(this).val());
+            interpolacionData.push(data)
+        });
+
+        listToMatrix1(interpolacionData, 2)
+
+        function listToMatrix1(list, elementsPerSubArray) {
+            var matrix = [], i, k;
+
+            for (i = 0, k = -1; i < list.length; i++) {
+                if (i % elementsPerSubArray === 0) {
+                    k++;
+                    matrix[k] = [];
+                }
+
+                matrix[k].push(list[i]);
+            }
+
+        }
+
+        //console.log(directosData);
+
+        /*var directoOutput = {
+            'eq': dataIncremental[0],
+            'inicio': dataIncremental[1],
+            'iteraciones': dataIncremental[3],
+            'delta': dataIncremental[2],
+
+        }*/
+
+        $.ajax({
+            url: '...',
+            type: 'POST',
+            data: JSON.stringify(fijoOutput),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                //mostrar resultado
+                show.fijo(JSON.parse(response))
+            }
+        });
+
 
     }
 

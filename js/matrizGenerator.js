@@ -45,7 +45,7 @@ var matriz = {
         $("#matrizInterpolacion").html("");
         $("#interpolacionTitulos").html("");
         var variablesInterpolacion = $("#variablesInterpolacion").val();
-        var row = '<td><input class"" type="number"></input></td><td><input class"" type="number"></input></td>'
+        var row = '<td><input class="interpolacionMatrix" type="number"></input></td><td><input class="interpolacionMatrix" type="number"></input></td>'
         $("#interpolacionTitulos").append('<td>x</td><td>f(x)</td>');
         for (var i = 0; i < variablesInterpolacion; i++) {
             $("#matrizInterpolacion").append('<tr>' + row + '</tr>')
