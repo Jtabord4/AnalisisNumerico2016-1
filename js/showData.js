@@ -13,7 +13,7 @@ var show = {
                         '<li class="list-group-item">Intervalo :' + x0
                         + '-' + x1
                         + 'evaluando en los puntos'
-                        + f0 + 'y' 
+                        + f0 + 'y'
                         + f1 + '</li>'
                     )
             }
@@ -21,19 +21,17 @@ var show = {
     },
 
     bisection: function (data) {
-       
-Usuario: Entre el intervalo a y b hay una raíz en m con un error de errabs
         if (data.status === 'true') {
             var a = data.output.a;
             var b = data.output.b;
             var m = data.output.m;
             var error = data.output.errabs;
             $('#resultadoBisection').html(
-            '<div>Entre el intervalo'+ a +
-            'y' + b +
-            'hay una raiz en' + m +
-            'con un error de' + error
-            +'</div>'
+                '<div>Entre el intervalo' + a +
+                'y' + b +
+                'hay una raiz en' + m +
+                'con un error de' + error
+                + '</div>'
             )
         }
     },
