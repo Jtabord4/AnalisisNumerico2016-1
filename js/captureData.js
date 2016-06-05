@@ -48,11 +48,11 @@ var capture = {
         });
 
         var bisectionOut = {
-            '"eq"': dataIncremental[0],
-            '"x0"': dataIncremental[1],
-            '"x1"': dataIncremental[2],
-            '"iteraciones"': dataIncremental[3],
-            '"tolerancia"': dataIncremental[4],
+            '"eq"': bisectionData[0],
+            '"x0"': bisectionData[1],
+            '"x1"': bisectionData[2],
+            '"iteraciones"': bisectionData[3],
+            '"tolerancia"': bisectionData[4],
 
         }
 
@@ -65,6 +65,62 @@ var capture = {
             success: function (response) {
                 //mostrar resultado
                 show.bisection(JSON.parse(response))
+            }
+        });
+    },
+    reglaFalsa: function () {
+        var reglaData = [];
+        $('.bisection').each(function () {
+            var data = ($(this).val());
+            reglaData.push(data)
+        });
+
+        var reglaOut = {
+            '"eq"': reglaData[0],
+            '"x0"': reglaData[1],
+            '"x1"': reglaData[2],
+            '"iteraciones"': reglaData[3],
+            '"tolerancia"': reglaData[4],
+
+        }
+
+        $.ajax({
+            url: '...',
+            type: 'POST',
+            data: JSON.stringify(reglaOut),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                //mostrar resultado
+                show.bisection(JSON.parse(response))
+            }
+        });
+    },
+    secante: function () {
+        var secanteData = [];
+        $('.bisection').each(function () {
+            var data = ($(this).val());
+            secanteData.push(data)
+        });
+
+        var secanteOut = {
+            '"eq"': secanteData[0],
+            '"x0"': secanteData[1],
+            '"x1"': secanteData[2],
+            '"iteraciones"': secanteData[3],
+            '"tolerancia"': secanteData[4],
+
+        }
+
+        $.ajax({
+            url: '...',
+            type: 'POST',
+            data: JSON.stringify(secanteOut),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                //mostrar resultado
+                show.secante(JSON.parse(response))
             }
         });
     },
@@ -98,17 +154,18 @@ var capture = {
     },
     fijo: function () {
         var fijoData = [];
+
         $('.fijo').each(function () {
             var data = ($(this).val());
             fijoData.push(data)
         });
 
         var fijoOutput = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
+            'eqfx': dataIncremental[0],
+            'x0': dataIncremental[2],
+            'eqfg': dataIncremental[1],
+            'tolerancia': dataIncremental[4],
             'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
-
         }
 
         $.ajax({

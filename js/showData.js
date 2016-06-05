@@ -35,16 +35,36 @@ var show = {
             )
         }
     },
+    regla: function () {
+        if (data.status === 'true') {
+            //output
+        }
+    },
+    secante: function () {
+        if (data.status === 'true') {
+            //output
+        }
+    },
+
     newton: function (data) {
         if (data.status === 'true') {
             var output = data.output;
             $('#resultadoBisection').html(output)
         }
     },
-    fijo: function (data) {
+    fijo: function (data) { 
         if (data.status === 'true') {
-            var output = data.output;
-            $('#resultadoFijos').html(output)
+            var n = data.output.n;
+            var error = data.output.errorabs;
+            var gx = data.output.gx;
+            var tolerancia = data.output.tolerancia;
+            $('#resultadoFijos').html(
+                  '<div>En la interacion' + n +
+                'con un error de' + errabs +
+                'hay una raiz en' + gx +
+                'cumpliendo con una tolerancia de' + tolerancia
+                + '</div>'
+            )
         }
     }
 }
