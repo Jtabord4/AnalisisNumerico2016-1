@@ -21,9 +21,20 @@ var show = {
     },
 
     bisection: function (data) {
+       
+Usuario: Entre el intervalo a y b hay una raíz en m con un error de errabs
         if (data.status === 'true') {
-            var output = data.output;
-            $('#resultadoBisection').html(output)
+            var a = data.output.a;
+            var b = data.output.b;
+            var m = data.output.m;
+            var error = data.output.errabs;
+            $('#resultadoBisection').html(
+            '<div>Entre el intervalo'+ a +
+            'y' + b +
+            'hay una raiz en' + m +
+            'con un error de' + error
+            +'</div>'
+            )
         }
     },
     newton: function (data) {
