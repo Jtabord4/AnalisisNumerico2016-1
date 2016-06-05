@@ -6,7 +6,8 @@
     <script src="js/jquery.js"></script>
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="js/captureData2.js"></script>
+    <script src="js/captureData.js"></script>
+    <script src="js/cambioModal.js"></script>
 </head>
 
 <div class="container">
@@ -79,7 +80,6 @@
                                 <li><a href="integracion.html">Simpson 1/3</a></li>
                             </ul>
                         </li>
-                        <li><a href="#equipo" data-toggle="modal">Students</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,24 +87,24 @@
     </div>
 
     <div class="panel-heading">
-        <h1>Numerical Integration</h1>
+        <h1><span onclick="cambio.cambioModal('integracion')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Numerical Integration</h1>
     </div>
     <div class="panel-body">
         <div class="form-group">
             <label class="control-label" for="inputDefault">Function</label>
-            <input type="text" class="form-control integracionIn" placeholder="">
+            <input type="text" placeholder="x^2 + 3*x +6" class="form-control integracionIn" placeholder="">
         </div>
         <div class="form-group">
-            <label class="control-label" for="inputDefault">Lower Limite</label>
-            <input type="text" class="form-control integracionIn" id="inputDefault">
+            <label class="control-label" for="inputDefault">Lower Limit</label>
+            <input type="text" placeholder="-1" class="form-control integracionIn" id="inputDefault">
         </div>
         <div class="form-group">
-            <label class="control-label" for="inputDefault">Upper Limite</label>
-            <input type="text" class="form-control integracionIn" id="inputDefault">
+            <label class="control-label" for="inputDefault">Upper Limit</label>
+            <input type="text" placeholder="1" class="form-control integracionIn" id="inputDefault">
         </div>
         <div class="form-group">
             <label class="control-label" for="inputDefault">Iterations</label>
-            <input type="text" class="form-control integracionIn" id="inputDefault">
+            <input type="text" placeholder="10" class="form-control integracionIn" id="inputDefault">
         </div>
     </div>
     <div class="btn-group">
@@ -113,8 +113,8 @@
                             <span class="caret"></span>
                         </a>
         <ul class="dropdown-menu">
-            <li><a onclick="capture2.integracion()">Trapezoid</a></li>
-            <li><a onclick="capture2.integracion()">Simpson 1/3</a></li>
+            <li><a onclick="capture.integracion()">Trapezoid</a></li>
+            <li><a onclick="capture.integracion()">Simpson 1/3</a></li>
         </ul>
     </div>
 </div>
@@ -141,3 +141,19 @@
         <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
     </div>
 </div>
+<div id="metodosModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="titulo" class="modal-title"></h4>
+                </div>
+                <div id="texto" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -81,7 +81,6 @@
                                 <li><a href="integracion.html">Simpson 1/3</a></li>
                             </ul>
                         </li>
-                        <li><a href="#equipo" data-toggle="modal">Students</a></li>
                     </ul>
                 </div>
             </div>
@@ -90,12 +89,12 @@
 
     <div id="interpolacion">
         <div class="panel-heading">
-            <h1><span onclick="cambio.cambioModal('interpolacion')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>Linear Interpolation</h1>
+            <h1><span onclick="cambio.cambioModal('interpolacion')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Linear Interpolation</h1>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Coordinates</label>
-                <input type="text" class="form-control" id="variablesInterpolacion">
+                <input type="text" placeholder="4" class="form-control" id="variablesInterpolacion">
                 <button onclick="matriz.tablaInterpolacion()" id="generarTabla" class="btn btn-default">Generate table</button>
                 <!--tabla aca-->
             </div>
@@ -112,7 +111,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="inputDefault">Value</label>
-                    <input type="text" class="form-control" id="inputDefault">
+                    <input type="text" placeholder="3" class="form-control" id="inputDefault">
                 </div>
                 <div class="btn-group">
                     <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -139,7 +138,7 @@
             <p>Steps:
                 <br> 1. Difine number of points
                 <br> 2. Use coordinates given
-                <br> 3. Provide value you want to Interpolate
+                <br> 3. Provide the value to Interpolate
                 <br> 4. Select the appropiate method
                 <br> 5. Run it!
                 <br>
