@@ -10,8 +10,7 @@
     <script src="js/matrizGenerator.js"></script>
     <script src="js/captureData.js"></script>
     <script src="js/showData.js"></script>
-
-
+    <script src="js/cambioModal.js"></script>
     <script src="js/main.js"></script>
     <style>
         input {
@@ -99,16 +98,15 @@
 
     <div id="directos">
         <div class="panel-heading">
-            <h1 class="col-sm-5"><span class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Direct Methods</h1>
+            <h1><span onclick="cambio.cambioModal('directos')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>  Direct Methods</h1>
             <a href="#"></a>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Number of Values</label>
                 <input type="text" class="form-control" id="inputDirectos">
-                <br>
-                <center> <button onclick="matriz.generate('#matrizDirectos', '#tituloDirectos', '#inputDirectos', 'directosMatrix')"
-                        class="btn btn-default">Get Matrix</button></center>
+                <button onclick="matriz.generate('#matrizDirectos', '#tituloDirectos', '#inputDirectos', 'directosMatrix')"
+                        class="btn btn-default">Get Matrix</button>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -135,13 +133,13 @@
 
     <div id="iterativos">
         <div class="panel-heading">
-            <h1>Iterative Methods</h1><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
+            <h1><span onclick="cambio.cambioModal('iterativos')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span> Iterative Methods</h1>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Number of Values</label>
                 <input type="number" id="numeroVariables" class="form-control">
-                <center><button onclick="matriz.generate('#matrizEcuaciones', '#variablesId', '#numeroVariables', 'iterativosMatrix')" class="btn btn-default">Get Matrix</button></center>
+                <button onclick="matriz.generate('#matrizEcuaciones', '#variablesId', '#numeroVariables', 'iterativosMatrix')" class="btn btn-default">Get Matrix</button>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -181,7 +179,7 @@
 
     <div id="factorizacion">
         <div id="rowTitulo" class="panel-heading">
-            <h1>LU Decomposition</h1><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
+            <h2><span onclick="cambio.cambioModal('lu')" href="#metodosModal" data-toggle="modal" class="glyphicon glyphicon-exclamation-sign"aria-hidden="true"></span>LU Decomposition</h2>
         </div>
         <div class="panel-body">
             <div class="form-group">
@@ -254,3 +252,19 @@
         <button type="Submit" class="btn btn-default" data-dismiss="modal">Back</button>
     </div>
 </div>
+<div id="metodosModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="titulo" class="modal-title"></h4>
+                </div>
+                <div id="texto" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
