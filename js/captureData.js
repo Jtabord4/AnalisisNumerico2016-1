@@ -184,7 +184,7 @@ var capture = {
 
         function listToMatrix(list, elementsPerSubArray) {
             var matrix = [], i, k;
-            var b = [];
+            var bi = [];
 
             for (i = 0, k = -1; i < list.length; i++) {
                 if (i % elementsPerSubArray === 0) {
