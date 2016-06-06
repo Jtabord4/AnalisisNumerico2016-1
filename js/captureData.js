@@ -366,7 +366,7 @@ var capture = {
         var A = [];
         var b = [];
         var url = null;
-     
+
         $(className).each(function () {
             var data = ($(this).val());
             luData.push(data)
@@ -404,22 +404,24 @@ var capture = {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/doolittle'
         } else if (method === 'cholesky') {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/cholesky'
-        }else if (method === 'LUgauss') {
+        } else if (method === 'LUgauss') {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo_total'
-        }else if (method === 'LUparcial') {
+        } else if (method === 'LUparcial') {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo_total'
         }
         $.ajax({
             url: url,
             type: "POST",
-            data: JSON.stringify({ "A": A, "b": b}),
+            data: JSON.stringify({ "A": A, "b": b }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
-                if (method === 'jacobi') {
-                    show.jacobi(JSON.parse(response), 'Jacobi')
-                } else if (method === 'gauss') {
-                    show.jacobi(JSON.parse(response), 'Gauss')
+                if (method === 'croult') {
+                    show.methodLU(JSON.parse(response), 'croult')
+                } else if (method === 'doolittle') {
+                    show.methodLU(JSON.parse(response), 'doolittle')
+                } else if (method === 'cholesky') {
+                    show.methodLU(JSON.parse(response), 'cholesky')
                 }
             }
         });
