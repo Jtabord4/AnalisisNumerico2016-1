@@ -52,14 +52,14 @@ var show = {
             $('#resultadoBisection').html(output)
         }
     },
-    fijo: function (data) { 
+    fijo: function (data) {
         if (data.status === 'true') {
             var n = data.output.n;
             var error = data.output.errorabs;
             var gx = data.output.gx;
             var tolerancia = data.output.tolerancia;
             $('#resultadoFijos').html(
-                  '<div>En la interacion' + n +
+                '<div>En la interacion' + n +
                 'con un error de' + errabs +
                 'hay una raiz en' + gx +
                 'cumpliendo con una tolerancia de' + tolerancia
@@ -67,20 +67,20 @@ var show = {
             )
         }
     },
-    jacobi: function(data, method){
-        if(data.status === 'true'){
-             var n = data.output.n;
-             var vector = data.output.vector;
-             var error = data.output.error;
-             var motivo = data.output.motivo_salida;
-             $('#iterativosOutput').html(
-                 '<div> Por' + method +'  el metodo termina por' + 
-                 motivo + 'en la iteracion' + 
-                 n + 'con el siguiente vector:' + 
-                 vector + 'y un error de' +
-                 error 
-             )
-             
+    jacobi: function (data, method) {
+        if (data.status === 'true') {
+         /*   var n = data.output.n;
+            var vector = data.output.vector;
+            var error = data.output.error;
+            var motivo = data.output.motivo_salida;*/
+            $('#iterativosOutput').html(
+                '<div> Por' + method + '  el metodo termina por' +
+                data.output.motivo_salida + 'en la iteracion' +
+                data.output.n + 'con el siguiente vector:' +
+                data.output.vector + 'y un error de' +
+                data.output.error
+            )
+
         }
     }
 }
