@@ -76,25 +76,28 @@ var show = {
                 + gx + " y un error de "
                 + error + "</li>"
             )
-          
+
 
         }
 
     },
     fijo: function (data) {
-        if (data.status === 'true') {
+         $('#resultadoFijos').html("");
+        for (var i = 0; i < data.output.length; i++) {
             var n = data.output.n;
             var error = data.output.errorabs;
             var gx = data.output.gx;
             var tolerancia = data.output.tolerancia;
-            $('#resultadoFijos').html(
-                '<div>En la interacion' + n +
-                'con un error de' + errabs +
-                'hay una raiz en' + gx +
-                'cumpliendo con una tolerancia de' + tolerancia
-                + '</div>'
+            $("#resultadoFijos").append(
+                "<div>En la interacion" + n +
+                "con un error de" + errabs +
+                "hay una raiz en" + gx +
+                "cumpliendo con una tolerancia de" + tolerancia
+                + "</div>"
             )
+
         }
+
     },
     jacobi: function (data, method) {
         var n = data.output.n;

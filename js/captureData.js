@@ -133,7 +133,7 @@ var capture = {
         $.ajax({
             url: 'http://74.208.132.152/practica/no_lineales/newton',
             type: "POST",
-            data: JSON.stringify({ "eq": eq, "x0": inicio,"derivate": derivada, "iteraciones": iteraciones, "delta": delta }),
+            data: JSON.stringify({ "eq": eq, "x0": inicio, "derivate": derivada, "iteraciones": iteraciones, "delta": delta }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
@@ -149,23 +149,22 @@ var capture = {
             fijoData.push(data)
         });
 
-        var fijoOutput = {
-            'eqfx': dataIncremental[0],
-            'x0': dataIncremental[2],
-            'eqfg': dataIncremental[1],
-            'tolerancia': dataIncremental[4],
-            'iteraciones': dataIncremental[3],
-        }
+        var eqfx = fijoData[0];
+        var eqfg = fijoData[1];
+        var x0 = fijoData[2];
+        var iteraciones = fijoData[3];
+        var tolerancia = fijoData[4];
+
+
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(fijoOutput),
+            url: 'http://74.208.132.152/practica/no_lineales/puntofijo',
+            type: "POST",
+            data: JSON.stringify({ "eqfx": eqfx, "x0": x0, "eqfg": eqfg, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.fijo(JSON.parse(response))
+                show.newton(JSON.parse(response));
             }
         });
 
