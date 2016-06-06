@@ -147,5 +147,14 @@ var show = {
             " y el valor interpolado es P(" + valor + ") = " +
             solucion
         )
+    },
+    integracionNumerica: function (data, method) {
+        var valor = data.output;
+        $("#integracionOutput").html(
+            "Con " + method + 
+            " la integral de la funcion es = " + 
+            valor 
+        )
+        
     }
 }

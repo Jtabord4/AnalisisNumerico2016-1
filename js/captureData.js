@@ -289,9 +289,10 @@ var capture = {
 
     },
 
-    integracion: function () {
+    integracion: function (method) {
         //arreglo de datos
         var dataIntegracion = [];
+
 
 
         // obetener valores
@@ -301,27 +302,30 @@ var capture = {
 
         });
         //objeto json
-        var searchOut = {
-            '"eq"': dataIntegracion[0],
-            '"inicial"': dataIntegracion[1],
-            '"final"': dataIntegracion[2],
-            '"iteraciones"': dataIntegracion[3],
-
+        var eq = dataIntegracion[0];
+        var inicial = dataIntegracion[1];
+        var final = dataIntegracion[2];
+        var iteraciones = dataIntegracion[3];
+      
+        if (method === 'simpson') {
+            url = 'http://74.208.132.152/practica/integracion/simpson'
+        } else if (method === 'trapecio') {
+            url = 'http://74.208.132.152/practica/integracion/trapecio'
         }
-
-
-        console.log(searchOut)
 
         //envio de datos
         $.ajax({
             url: url,
-            type: 'POST',
-            data: JSON.stringify(searchOut),
+            type: "POST",
+            data: JSON.stringify({ "eq": eq, "limite_inferior": inicial, "limite_superior": final}),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.integracion(JSON.parse(response))
+                if (method === 'simpson') {
+                    show.interpolacionLagrange(JSON.parse(response), 'simpson')
+                } else if (method === 'trapecio') {
+                    show.interpolacionNewton(JSON.parse(response), 'trapecio')
+                }
             }
         });
 
