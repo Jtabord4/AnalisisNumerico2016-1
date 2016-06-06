@@ -116,5 +116,16 @@ var show = {
             "Los valores del vector x en la eliminacion gaussianda son: " +
             vector
         )
+    },
+    methodLU: function (data, method) {
+    var x = data.output.x;
+    var L = data.output.L;
+    var U = data.output.U;
+    $("#methodOut").html(
+        "Usando " + method + " obtenemos LU de la siguiente forma L: " +
+        L + " y U: " +
+        U + " con un vecto x:" +
+        x
+    )
     }
 }

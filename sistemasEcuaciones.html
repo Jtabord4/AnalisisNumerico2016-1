@@ -182,7 +182,7 @@
             <div class="form-group">
                 <label class="control-label" for="inputDefault">Number of Values</label>
                 <input type="number" placeholder="3" class="form-control" id="variablesLU">
-                <button onclick="matriz.generate('#matrizLU', '#titulosLU', '#variablesLU')" class="btn btn-default">Get Matrix</button>
+                <button onclick="matriz.generate('#matrizLU', '#titulosLU', '#variablesLU', 'matrixLU')" class="btn btn-default">Get Matrix</button>
             </div>
             <div class="form-group">
                 <div class="row">
@@ -199,12 +199,15 @@
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="alert('  ');">LU GAUSS</a></li>
+                    <li><a>LU GAUSS</a></li>
                     <li><a href="#">LU PARTIAL</a></li>
                     <li><a href="#">Crout</a></li>
                     <li><a href="#">Doolittle</a></li>
                     <li><a href="#">Cholesky</a></li>
                 </ul>
+            </div>
+            <div id="methodOutput">
+                
             </div>
         </div>
     </div>

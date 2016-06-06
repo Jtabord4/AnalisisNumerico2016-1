@@ -347,16 +347,6 @@ var capture = {
 
         }
 
-        //console.log(directosData);
-
-        /*var directoOutput = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
-
-        }*/
-
         $.ajax({
             url: '...',
             type: 'POST',
@@ -366,6 +356,71 @@ var capture = {
             success: function (response) {
                 //mostrar resultado
                 show.fijo(JSON.parse(response))
+            }
+        });
+
+
+    },
+    methodLU: function (className, method) {
+        var luData = [];
+        var A = [];
+        var b = [];
+        var url = null;
+     
+        $(className).each(function () {
+            var data = ($(this).val());
+            luData.push(data)
+        });
+
+        listToMatrix1(luData, (matriz.idVariable + 1))
+
+        function listToMatrix1(list, elementsPerSubArray) {
+            var matrix = [], i, k;
+            var bi = [];
+
+            for (i = 0, k = -1; i < list.length; i++) {
+                if (i % elementsPerSubArray === 0) {
+                    k++;
+                    matrix[k] = [];
+                }
+
+                matrix[k].push(list[i]);
+            }
+            for (var i = 0; i < matrix.length; i++) {
+                bi.push(matrix[i][matriz.idVariable]);
+                matrix[i].pop();
+            }
+            A = matrix;
+            b = bi;
+
+
+        }
+
+        //console.log(directosData);
+
+        if (method === 'croult') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/croult'
+        } else if (method === 'doolittle') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/doolittle'
+        } else if (method === 'cholesky') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/cholesky'
+        }else if (method === 'LUgauss') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo_total'
+        }else if (method === 'LUparcial') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo_total'
+        }
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: JSON.stringify({ "A": A, "b": b}),
+            contentType: 'application/json',
+            success: function (response) {
+                //mostrar resultado
+                if (method === 'jacobi') {
+                    show.jacobi(JSON.parse(response), 'Jacobi')
+                } else if (method === 'gauss') {
+                    show.jacobi(JSON.parse(response), 'Gauss')
+                }
             }
         });
 
