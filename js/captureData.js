@@ -268,6 +268,8 @@ var capture = {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi'
         } else if (method === 'gauss') {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/gauss_seidel'
+        } else if (method === 'completo') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo_total'
         }
         $.ajax({
             url: url,
