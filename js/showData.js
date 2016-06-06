@@ -2,7 +2,7 @@
 var show = {
 
     busquedaIncremental: function (data) {
-        JSON.parse(data);
+        JSON.stringify(data);
         var x0 = data.output[i].x0;
         var x1 = data.output[i].x1;
         var f0 = data.output[i].fx0;
