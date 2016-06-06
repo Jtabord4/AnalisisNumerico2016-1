@@ -97,21 +97,17 @@ var capture = {
             secanteData.push(data)
         });
 
-        var secanteOut = {
-            '"eq"': secanteData[0],
-            '"x0"': secanteData[1],
-            '"x1"': secanteData[2],
-            '"iteraciones"': secanteData[3],
-            '"tolerancia"': secanteData[4],
-
-        }
+        var eq = secanteData[0];
+        var x0 = secanteData[1];
+        var x1 = secanteData[2];
+        var iteraciones = secanteData[3];
+        var tolerancia = secanteData[4];
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(secanteOut),
+            url: 'http://74.208.132.152/practica/no_lineales/secante',
+            type: "POST",
+            data: JSON.stringify({ "eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
                 show.secante(JSON.parse(response))

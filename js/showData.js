@@ -7,6 +7,7 @@ var show = {
             var x1 = data.output[i].x1;
             var f0 = data.output[i].fx0;
             var f1 = data.output[i].fx1;
+            $("#resultadoSearch").html("");
             $("#resultadoSearch").append(
                 "<li class='list-group-item'>Intervalo: " + x0
                 + " a " + x1
@@ -24,6 +25,7 @@ var show = {
             var b = data.output[i].b;
             var m = data.output[i].m;
             var error = data.output[i].errabs;
+            $("#resultadoBisection").html("");
             $("#resultadoBisection").append(
                 "<div>Entre el intervalo " + a +
                 " y " + b +
@@ -44,8 +46,19 @@ var show = {
         }
     },
     secante: function () {
-        if (data.status === 'true') {
-            //output
+        for (var i = 0; i < data.output.length; i++) {
+            var a = data.output[i].a;
+            var b = data.output[i].b;
+            var m = data.output[i].m;
+            var error = data.output[i].errabs;
+            $("#resultadoBisection").html("");
+            $("#resultadoBisection").append(
+                "<div>Entre el intervalo " + a +
+                " y " + b +
+                " hay una raiz en " + m +
+                " con un error de " + error
+                + "</div>"
+            )
         }
     },
 
