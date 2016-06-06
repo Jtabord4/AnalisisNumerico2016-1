@@ -67,14 +67,14 @@ var show = {
             )
         }
     },
-    jacobi: function(data){
+    jacobi: function(data, method){
         if(data.status === 'true'){
              var n = data.output.n;
              var vector = data.output.vector;
              var error = data.output.error;
              var motivo = data.output.motivo_salida;
              $('#iterativosOutput').html(
-                 '<div> Por Jacobi el metodo termina por' + 
+                 '<div> Por' + method +'  el metodo termina por' + 
                  motivo + 'en la iteracion' + 
                  n + 'con el siguiente vector:' + 
                  vector + 'y un error de' +

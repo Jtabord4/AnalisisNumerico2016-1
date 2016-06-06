@@ -238,10 +238,11 @@ var capture = {
         });
 
     },
-    iterativosJacobi: function (className) {
+    iterativosJacobi: function (className, method) {
         var iterativosData = [];
         var A = [];
         var b = [];
+        var url = null;
         var iteraciones = $("#iteracionesIterativos").val();
         var tolerancia = $("#toleranciaIterativos").val();
         $(className).each(function () {
@@ -269,7 +270,7 @@ var capture = {
             }
             A = matrix;
             b = bi;
-            
+
 
         }
 
@@ -281,16 +282,24 @@ var capture = {
             '"iteraciones"': iteraciones,
             '"tolerancia"': tolerancia
         }
-
+        if (method === 'jacobi') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi/'
+        } else if (method === 'gauss') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/gauss_seidel/'
+        }
         $.ajax({
-            url: 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi/',
+            url: url,
             type: 'POST',
             data: JSON.stringify(jacobiOutput),
             contentType: 'application/json',
             dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.jacobi(JSON.parse(response))
+                if (method === 'jacobi') {
+                    show.jacobi(JSON.parse(response), 'Jacobi')
+                } else if(method === 'gauss'){
+                    show.jacobi(JSON.parse(response), 'Gauss')
+                }
             }
         });
 
