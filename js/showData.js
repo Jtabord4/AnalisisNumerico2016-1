@@ -78,7 +78,7 @@ var show = {
                 data.output.motivo_salida + "en la iteracion" +
                 data.output.n + n + "con el siguiente vector:" +
                 data.output.vector + "y un error de" +
-                data.output.error
+                data.output.error + "</div>"
             )
 
         }
