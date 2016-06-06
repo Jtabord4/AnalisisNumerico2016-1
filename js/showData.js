@@ -121,7 +121,7 @@ var show = {
     var x = data.output.x;
     var L = data.output.L;
     var U = data.output.U;
-    $("#methodOut").html(
+    $("#methodOutput").html(
         "Usando " + method + " obtenemos LU de la siguiente forma L: " +
         L + " y U: " +
         U + " con un vecto x:" +
