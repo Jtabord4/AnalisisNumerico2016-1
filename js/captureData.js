@@ -322,9 +322,9 @@ var capture = {
             success: function (response) {
                 //mostrar resultado
                 if (method === 'simpson') {
-                    show.interpolacionLagrange(JSON.parse(response), 'simpson')
+                    show.integracionNumerica(JSON.parse(response), 'simpson')
                 } else if (method === 'trapecio') {
-                    show.interpolacionNewton(JSON.parse(response), 'trapecio')
+                    show.integracionNumerica(JSON.parse(response), 'trapecio')
                 }
             }
         });
