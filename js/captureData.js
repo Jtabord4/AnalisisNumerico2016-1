@@ -291,7 +291,7 @@ var capture = {
             url: url,
             //method: "POST",
             type: "POST",
-            data: JSON.stringify(jacobiOutput),
+            data: jacobiOutput,
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
