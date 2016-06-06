@@ -69,11 +69,10 @@ var show = {
     },
     jacobi: function(data, method){
         if(data.status === 'true'){
-            var output=  JSON.parse(data.output)
-             var n = output.n;
-             var vector = output.vector;
-             var error = output.error;
-             var motivo = output.motivo_salida;
+             var n = data.output.n;
+             var vector = data.output.vector;
+             var error = data.output.error;
+             var motivo = data.output.motivo_salida;
              $('#iterativosOutput').html(
                  '<div> Por' + method +'  el metodo termina por' + 
                  motivo + 'en la iteracion' + 
