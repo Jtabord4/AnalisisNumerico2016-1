@@ -2,12 +2,12 @@
 var show = {
 
     busquedaIncremental: function (data) {
-        var x0 = data.output[i].x0;
-        var x1 = data.output[i].x1;
-        var f0 = data.output[i].fx0;
-        var f1 = data.output[i].fx1;
         if (data.status === 'true') {
             for (var i = 0; i < data.output.length; i++) {
+                var x0 = data.output[i].x0;
+                var x1 = data.output[i].x1;
+                var f0 = data.output[i].fx0;
+                var f1 = data.output[i].fx1;
                 $("#resultadoSearch").append(
                     "<li class='list-group-item'>Intervalo :" + x0
                     + "-" + x1
