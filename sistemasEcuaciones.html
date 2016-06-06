@@ -122,11 +122,12 @@
                             <span class="caret"></span>
                         </a>
                 <ul class="dropdown-menu">
-                    <li><a onclick="capture.directos('.directosMatrix')">Gaussian Elimination</a></li>
-                    <li><a href="#">Partial Pivoting</a></li>
-                    <li><a href="#">Complete Pivoting</a></li>
+                    <li><a onclick="capture.directos('.directosMatrix', 'gauss')">Gaussian Elimination</a></li>
+                    <li><a onclick="capture.directos('.directosMatrix', 'parcial')">Partial Pivoting</a></li>
+                    <li><a>Complete Pivoting</a></li>
                 </ul>
             </div>
+            <div id="eliminacionOutput"></div>
         </div>
     </div>
 

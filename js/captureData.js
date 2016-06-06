@@ -170,8 +170,11 @@ var capture = {
 
     },
 
-    directos: function (className) {
+    directos: function (className, method) {
         var directosData = [];
+        var A = [];
+        var b = [];
+        var url;
         $(className).each(function () {
             var data = ($(this).val());
             directosData.push(data)
@@ -197,31 +200,28 @@ var capture = {
             for (var i = 0; i < matrix.length; i++) {
                 b.push(matrix[i][matriz.idVariable]);
                 matrix[i].pop();
-
             }
-
+            A = matrix;
+            b = bi;
 
         }
 
-        //console.log(directosData);
 
-        /*var directoOutput = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
-
-        }*/
+        //eliminacion gauss y parcial
+        if (method === 'gauss') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana'
+        } else if (method === 'parcial') {
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/elim_gausiana_pivoteo/'
+        }
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(fijoOutput),
+            url: url,
+            type: "POST",
+            data: JSON.stringify({ "A": A, "b": b }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.fijo(JSON.parse(response))
+                show.eliminacionParcial(JSON.parse(response))
             }
         });
 
@@ -264,12 +264,6 @@ var capture = {
 
         //console.log(directosData);
 
-        var jacobiOutput = {
-            '"A"': A,
-            '"b"': b,
-            '"iteraciones"': iteraciones,
-            '"tolerancia"': tolerancia
-        }
         if (method === 'jacobi') {
             url = 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi'
         } else if (method === 'gauss') {

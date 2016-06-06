@@ -82,7 +82,7 @@ var show = {
 
     },
     fijo: function (data) {
-         $("#resultadoFijo").html("");
+        $("#resultadoFijo").html("");
         for (var i = 0; i < data.output.length; i++) {
             var n = data.output.n;
             var error = data.output.errorabs;
@@ -109,5 +109,12 @@ var show = {
             n + " con el siguiente vector: " +
             vector + " y un error de " +
             error + "</div>")
+    },
+    eliminacionParcial: function (data) {
+        var vector = data.output;
+        $("#eliminacionOutput").html(
+            "Los valores del vector x en la eliminacion gaussianda son: " +
+            vector
+        )
     }
 }
