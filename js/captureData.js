@@ -30,7 +30,7 @@ var capture = {
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
-                show.busquedaIncremental(response)
+                show.busquedaIncremental(JSON.parse(response))
             }
         });
 
