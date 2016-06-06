@@ -10,7 +10,7 @@ var capture = {
 
 
         // obetener valores
-        $('.searchIn').each(function () {
+        $(".searchIn").each(function () {
             var data = ($(this).val());
             dataIncremental.push(data)
 
@@ -28,7 +28,7 @@ var capture = {
         //envio de datos
         $.ajax({
             url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
-            type: 'POST',
+            type: "POST",
             data: JSON.stringify({
                 "eq": dataIncremental[0],
                 "inicio": dataIncremental[1],
@@ -47,7 +47,7 @@ var capture = {
 
     bisection: function () {
         var bisectionData = [];
-        $('.bisection').each(function () {
+        $(".bisection").each(function () {
             var data = ($(this).val());
             bisectionData.push(data)
         });
@@ -62,9 +62,16 @@ var capture = {
         }
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(bisectionOut),
+            url: 'http://74.208.132.152/practica/no_lineales/biseccion',
+            type: "POST",
+            data: JSON.stringify({
+                "eq": bisectionData[0],
+                "x0": bisectionData[1],
+                "x1": bisectionData[2],
+                "iteraciones": bisectionData[3],
+                "tolerancia": bisectionData[4]
+
+            }),
             contentType: 'application/json',
             dataType: 'json',
             success: function (response) {
@@ -295,7 +302,7 @@ var capture = {
         $.ajax({
             url: url,
             type: "POST",
-            data: JSON.stringify({ "A": A, "b": b, "iteraciones": iteraciones, "tolerancia": tolerancia }),         
+            data: JSON.stringify({ "A": A, "b": b, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado

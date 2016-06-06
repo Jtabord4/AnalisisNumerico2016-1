@@ -25,12 +25,12 @@ var show = {
             var b = data.output.b;
             var m = data.output.m;
             var error = data.output.errabs;
-            $('#resultadoBisection').html(
-                '<div>Entre el intervalo' + a +
-                'y' + b +
-                'hay una raiz en' + m +
-                'con un error de' + error
-                + '</div>'
+            $("#resultadoBisection").html(
+                "<div>Entre el intervalo" + a +
+                "y" + b +
+                "hay una raiz en" + m +
+                "con un error de" + error
+                + "</div>"
             )
         }
     },
