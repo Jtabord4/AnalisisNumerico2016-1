@@ -16,11 +16,11 @@ var capture = {
 
         });
 
-        var eq = bisectionData[0];
-        var x0 = bisectionData[1];
-        var x1 = bisectionData[2];
-        var iteraciones = bisectionData[3];
-        var tolerancia = bisectionData[4];
+        var eq = dataIncremental[0];
+        var x0 = dataIncremental[1];
+        var x1 = dataIncremental[2];
+        var iteraciones = dataIncremental[3];
+        var tolerancia = dataIncremental[4];
      
 
         //envio de datos
