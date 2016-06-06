@@ -68,7 +68,7 @@ var show = {
         }
     },
     jacobi: function (data, method) {
-        var n = null;
+        var n;
         if (data.status === 'true') {
             n = data.output.n;
          /*   var n = data.output.n;
