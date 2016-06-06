@@ -15,18 +15,18 @@ var capture = {
             dataIncremental.push(data)
 
         });
-        
+
         var eq = '"' + dataIncremental[0] + '"';
         var inicio = dataIncremental[1];
         var delta = dataIncremental[2];
         var iteraciones = dataIncremental[3];
-     
+        var output = JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "delta": delta })
 
         //envio de datos
         $.ajax({
             url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
             type: "POST",
-            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "delta": delta }),
+            data: output,
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
