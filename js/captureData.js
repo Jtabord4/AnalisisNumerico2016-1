@@ -124,10 +124,10 @@ var capture = {
 
 
 
-        var eq = bisectionData[0];
-        var inicio = bisectionData[1];
-        var iteraciones = bisectionData[1];
-        var delta = bisectionData[2];
+        var eq = newtonData[0];
+        var inicio = newtonData[1];
+        var iteraciones = newtonData[2];
+        var delta = newtonData[3];
 
         $.ajax({
             url: url,
