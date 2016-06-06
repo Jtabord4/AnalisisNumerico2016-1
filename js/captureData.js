@@ -291,13 +291,14 @@ var capture = {
             url: url,
             //method: "POST",
             type: "POST",
-            data: JSON.parse(jacobiOutput),
+            data: JSON.stringify({ "A": A, "b": b, "iteraciones": iteraciones, "tolerancia": tolerancia }),
+            //data: JSON.parse(jacobiOutput),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
                 if (method === 'jacobi') {
                     show.jacobi(JSON.parse(response), 'Jacobi')
-                } else if(method === 'gauss'){
+                } else if (method === 'gauss') {
                     show.jacobi(JSON.parse(response), 'Gauss')
                 }
             }
