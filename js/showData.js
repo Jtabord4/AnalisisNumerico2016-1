@@ -82,13 +82,13 @@ var show = {
 
     },
     fijo: function (data) {
-         $('#resultadoFijos').html("");
+         $("#resultadoFijo").html("");
         for (var i = 0; i < data.output.length; i++) {
             var n = data.output.n;
             var error = data.output.errorabs;
             var gx = data.output.gx;
             var tolerancia = data.output.tolerancia;
-            $("#resultadoFijos").append(
+            $("#resultadoFijo").append(
                 "<div>En la interacion" + n +
                 "con un error de" + error +
                 "hay una raiz en" + gx +
