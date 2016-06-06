@@ -56,7 +56,6 @@ var capture = {
             type: "POST",
             data: JSON.stringify({ "eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
                 show.bisection(JSON.parse(response));
