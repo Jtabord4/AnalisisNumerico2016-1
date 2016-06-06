@@ -29,9 +29,14 @@ var capture = {
         $.ajax({
             url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
             type: 'POST',
-            data: JSON.stringify(searchOut),
+            data: JSON.stringify({
+                "eq": dataIncremental[0],
+                "inicio": dataIncremental[1],
+                "iteraciones": dataIncremental[3],
+                "delta": dataIncremental[2]
+
+            }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
                 show.busquedaIncremental(JSON.parse(response))
@@ -289,10 +294,8 @@ var capture = {
         }
         $.ajax({
             url: url,
-            //method: "POST",
             type: "POST",
-            data: JSON.stringify({ "A": A, "b": b, "iteraciones": iteraciones, "tolerancia": tolerancia }),
-            //data: JSON.parse(jacobiOutput),
+            data: JSON.stringify({ "A": A, "b": b, "iteraciones": iteraciones, "tolerancia": tolerancia }),         
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado

@@ -2,19 +2,18 @@
 var show = {
 
     busquedaIncremental: function (data) {
+        var x0 = data.output[i].x0;
+        var x1 = data.output[i].x1;
+        var f0 = data.output[i].fx0;
+        var f1 = data.output[i].fx1;
         if (data.status === 'true') {
             for (var i = 0; i < data.output.length; i++) {
-                var x0 = data.output[i].x0;
-                var x1 = data.output[i].x1;
-                var f0 = data.output[i].fx0;
-                var f1 = data.output[i].fx1;
-                var out = '<li class="list-group-item">' +
-                    $('#resultadoSearch').append(
-                        '<li class="list-group-item">Intervalo :' + x0
-                        + '-' + x1
-                        + 'evaluando en los puntos'
-                        + f0 + 'y'
-                        + f1 + '</li>'
+                    $("#resultadoSearch").append(
+                        "<li class='list-group-item'>Intervalo :" + x0
+                        + "-" + x1
+                        + "evaluando en los puntos"
+                        + f0 + "y"
+                        + f1 + "</li>"
                     )
             }
         }
@@ -72,10 +71,10 @@ var show = {
         var vector = data.output.vector;
         var error = data.output.error;
         var motivo = data.output.motivo_salida;
-        $("#iterativosOutput").html("<div> Por " + method + "el metodo termina por " +
-            motivo + "en la iteracion " +
-            n + "con el siguiente vector: " +
-            vector + "y un error de " +
+        $("#iterativosOutput").html("<div> Por " + method + " el metodo termina por " +
+            motivo + " en la iteracion " +
+            n + " con el siguiente vector: " +
+            vector + " y un error de " +
             error + "</div>")
     }
 }
