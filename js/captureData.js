@@ -283,16 +283,16 @@ var capture = {
             '"tolerancia"': tolerancia
         }
         if (method === 'jacobi') {
-            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi/'
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/jacobi'
         } else if (method === 'gauss') {
-            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/gauss_seidel/'
+            url = 'http://74.208.132.152/practica/sistemas_ecuaciones/gauss_seidel'
         }
         $.ajax({
             url: url,
-            type: 'POST',
+            //method: "POST",
+            type: "POST",
             data: JSON.stringify(jacobiOutput),
             contentType: 'application/json',
-            dataType: 'jsonp',
             success: function (response) {
                 //mostrar resultado
                 if (method === 'jacobi') {
