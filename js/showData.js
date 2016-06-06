@@ -8,23 +8,23 @@ var show = {
         var f1 = data.output[i].fx1;
         if (data.status === 'true') {
             for (var i = 0; i < data.output.length; i++) {
-                    $("#resultadoSearch").append(
-                        "<li class='list-group-item'>Intervalo :" + x0
-                        + "-" + x1
-                        + "evaluando en los puntos"
-                        + f0 + "y"
-                        + f1 + "</li>"
-                    )
+                $("#resultadoSearch").append(
+                    "<li class='list-group-item'>Intervalo :" + x0
+                    + "-" + x1
+                    + "evaluando en los puntos"
+                    + f0 + "y"
+                    + f1 + "</li>"
+                )
             }
         }
     },
 
     bisection: function (data) {
+        var a = data.output.a;
+        var b = data.output.b;
+        var m = data.output.m;
+        var error = data.output.errabs;
         if (data.status === 'true') {
-            var a = data.output.a;
-            var b = data.output.b;
-            var m = data.output.m;
-            var error = data.output.errabs;
             $("#resultadoBisection").html(
                 "<div>Entre el intervalo" + a +
                 "y" + b +

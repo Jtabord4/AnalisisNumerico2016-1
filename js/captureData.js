@@ -16,7 +16,7 @@ var capture = {
 
         });
 
-        var eq = '"' + dataIncremental[0] + '"';
+        var eq = dataIncremental[0];
         var inicio = dataIncremental[1];
         var delta = dataIncremental[2];
         var iteraciones = dataIncremental[3];
