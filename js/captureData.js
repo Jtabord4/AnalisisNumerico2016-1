@@ -132,7 +132,7 @@ var capture = {
         $.ajax({
             url: 'http://74.208.132.152/practica/no_lineales/newton',
             type: "POST",
-            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "tolerancia": tolerancia, "delta": delta }),
+            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "delta": delta }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
