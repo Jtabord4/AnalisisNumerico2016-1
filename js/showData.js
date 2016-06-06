@@ -8,10 +8,10 @@ var show = {
             var f0 = data.output[i].fx0;
             var f1 = data.output[i].fx1;
             $("#resultadoSearch").append(
-                "<li class='list-group-item'>Intervalo :" + x0
-                + "-" + x1
-                + "evaluando en los puntos"
-                + f0 + "y"
+                "<li class='list-group-item'>Intervalo: " + x0
+                + " a " + x1
+                + " evaluando en los puntos "
+                + f0 + " y "
                 + f1 + "</li>"
             )
 
