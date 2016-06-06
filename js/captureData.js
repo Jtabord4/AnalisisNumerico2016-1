@@ -36,7 +36,7 @@ var capture = {
 
     },
 
-    bisection: function () {
+    bisection: function (url) {
         var bisectionData = [];
         $(".bisection").each(function () {
             var data = ($(this).val());
@@ -52,7 +52,7 @@ var capture = {
 
 
         $.ajax({
-            url: 'http://74.208.132.152/practica/no_lineales/biseccion',
+            url: url,
             type: "POST",
             data: JSON.stringify({ "eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
