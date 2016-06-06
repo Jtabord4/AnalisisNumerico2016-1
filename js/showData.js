@@ -118,14 +118,34 @@ var show = {
         )
     },
     methodLU: function (data, method) {
-    var x = data.output.x;
-    var L = data.output.L;
-    var U = data.output.U;
-    $("#methodOutput").html(
-        "Usando " + method + " obtenemos LU de la siguiente forma L: " +
-        L + " y U: " +
-        U + " con un vecto x:" +
-        x
-    )
+        var x = data.output.x;
+        var L = data.output.L;
+        var U = data.output.U;
+        $("#methodOutput").html(
+            "Usando " + method + " obtenemos LU de la siguiente forma L : " +
+            L + " y U : " +
+            U + " con un vector x:" +
+            x
+        )
+    },
+    interpolacionLagrange: function (data) {
+        var L = data.output.L;
+        var valor = data.output.valor_interpolar;
+        var solucion = data.output.solucion_interpolar;
+        $("#interpolacionOutput").html(
+            "Usando la interpolacion de Lagrange los multiplicadores son L: " +
+            L + " y el valor interpolado es P(" + valor + ") = " + solucion
+
+        )
+    },
+    interpolacionNewton: function (data) {
+        var B = data.output.B;
+        var valor = data.output.valor_interpolar;
+        var solucion = data.output.solucion_interpolar;
+        $("#interpolacionOutput").html(
+            "Usando la interpolacion de Newton los valor de la diagonal de la matriz de interpolacion sacada por diferencia dividida son:" + B +
+            " y el valor interpolado es P(" + valor + ") = " +
+            solucion
+        )
     }
 }

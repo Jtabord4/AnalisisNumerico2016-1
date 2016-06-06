@@ -112,7 +112,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="inputDefault">Value</label>
-                    <input type="number" placeholder="3" class="form-control" id="inputDefault">
+                    <input type="number" placeholder="3" class="form-control" id="interpolacionValue">
                 </div>
                 <div class="btn-group">
                     <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -120,12 +120,15 @@
                             <span class="caret"></span>
                         </a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="capture.interpolacion('.interpolacionMatrix')" >Lagrange</a></li>
-                        <li><a href="#">Newton</a></li>
-                        <li><a href="#">Linear Spline</a></li>
+                        <li><a onclick="capture.interpolacion('.interpolacionMatrix', 'lagrange')">Lagrange</a></li>
+                        <li><a onclick="capture.interpolacion('.interpolacionMatrix', 'newton')">Newton</a></li>
+                        <li><a>Linear Spline</a></li>
                         <li><a href="#">Cubic Spline</a></li>
                     </ul>
                 </div>
+                <br>
+                <label>Output</label>
+                <div id="interpolacionOutput"></div>
             </div>
         </div>
     </div>

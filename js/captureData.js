@@ -308,11 +308,13 @@ var capture = {
             '"iteraciones"': dataIntegracion[3],
 
         }
+
+
         console.log(searchOut)
 
         //envio de datos
         $.ajax({
-            url: '...',
+            url: url,
             type: 'POST',
             data: JSON.stringify(searchOut),
             contentType: 'application/json',
@@ -324,8 +326,11 @@ var capture = {
         });
 
     },
-    interpolacion: function (className) {
+    interpolacion: function (className, method) {
         var interpolacionData = [];
+        var valor = $("#interpolacionValue");
+        var coordenadas = [];
+        var url;
         $(className).each(function () {
             var data = ($(this).val());
             interpolacionData.push(data)
@@ -344,18 +349,27 @@ var capture = {
 
                 matrix[k].push(list[i]);
             }
+            coordenadas = matrix;
+        }
 
+        if (method === 'lagrange') {
+            url = 'http://74.208.132.152/practica/interpolacion/lagrange'
+        } else if (method === 'newton') {
+            url = 'http://74.208.132.152/practica/interpolacion/newton'
         }
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(fijoOutput),
+            url: url,
+            type: "POST",
+            data: JSON.stringify({ "valor_interpolar": valor, "coordenadas": coordenadas }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.fijo(JSON.parse(response))
+                if (method === 'lagrange') {
+                    show.interpolacionLagrange(JSON.parse(response))
+                } else if (method === 'newton') {
+                    show.interpolacionNewton(JSON.parse(response))
+                }
             }
         });
 
