@@ -90,7 +90,7 @@ var show = {
             var tolerancia = data.output.tolerancia;
             $("#resultadoFijos").append(
                 "<div>En la interacion" + n +
-                "con un error de" + errabs +
+                "con un error de" + error +
                 "hay una raiz en" + gx +
                 "cumpliendo con una tolerancia de" + tolerancia
                 + "</div>"
