@@ -74,8 +74,8 @@ var show = {
         var motivo = data.output.motivo_salida;
         $("#iterativosOutput").html("<div> Por " + method + "el metodo termina por " +
             motivo + "en la iteracion " +
-            n + "con el siguiente vector:" +
-            vector + "y un error de" +
+            n + "con el siguiente vector: " +
+            vector + "y un error de " +
             error + "</div>")
     }
 }
