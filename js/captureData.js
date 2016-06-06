@@ -130,7 +130,7 @@ var capture = {
         var delta = newtonData[3];
 
         $.ajax({
-            url: url,
+            url: 'http://74.208.132.152/practica/no_lineales/newton',
             type: "POST",
             data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "tolerancia": tolerancia, "delta": delta }),
             contentType: 'application/json',
