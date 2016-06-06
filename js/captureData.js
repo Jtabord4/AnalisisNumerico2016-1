@@ -51,27 +51,19 @@ var capture = {
             var data = ($(this).val());
             bisectionData.push(data)
         });
+        
+        var eq = bisectionData[0];
+        var x0 = bisectionData[1];
+        var x1 = bisectionData[2];
+        var iteraciones = bisectionData[3];
+        var tolerancia = bisectionData[4];
 
-        var bisectionOut = {
-            '"eq"': bisectionData[0],
-            '"x0"': bisectionData[1],
-            '"x1"': bisectionData[2],
-            '"iteraciones"': bisectionData[3],
-            '"tolerancia"': bisectionData[4],
-
-        }
+     
 
         $.ajax({
             url: 'http://74.208.132.152/practica/no_lineales/biseccion',
             type: "POST",
-            data: JSON.stringify({
-                "eq": bisectionData[0],
-                "x0": bisectionData[1],
-                "x1": bisectionData[2],
-                "iteraciones": bisectionData[3],
-                "tolerancia": bisectionData[4]
-
-            }),
+            data: JSON.stringify({"eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia}),
             contentType: 'application/json',
             dataType: 'json',
             success: function (response) {
