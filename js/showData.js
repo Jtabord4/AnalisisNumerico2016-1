@@ -20,18 +20,23 @@ var show = {
     },
 
     bisection: function (data) {
-        var a = data.output.a;
-        var b = data.output.b;
-        var m = data.output.m;
-        var error = data.output.errabs;
-        if (data.status === 'true') {
-            $("#resultadoBisection").html(
+        for (var i = 0; i < data.output.length; i++) {
+            var a = data.output[i].a;
+            var b = data.output[i].b;
+            var m = data.output[i].m;
+            var error = data.output[i].errabs;
+            $("#resultadoBisection").append(
                 "<div>Entre el intervalo" + a +
                 "y" + b +
                 "hay una raiz en" + m +
                 "con un error de" + error
                 + "</div>"
             )
+
+        }
+
+        if (data.status === 'true') {
+
         }
     },
     regla: function () {
