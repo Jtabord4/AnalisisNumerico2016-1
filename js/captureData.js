@@ -15,27 +15,19 @@ var capture = {
             dataIncremental.push(data)
 
         });
-        //objeto json
-        var searchOut = {
-            '"eq"': dataIncremental[0],
-            '"inicio"': dataIncremental[1],
-            '"iteraciones"': dataIncremental[3],
-            '"delta"': dataIncremental[2],
 
-        }
-        console.log(searchOut)
+        var eq = bisectionData[0];
+        var x0 = bisectionData[1];
+        var x1 = bisectionData[2];
+        var iteraciones = bisectionData[3];
+        var tolerancia = bisectionData[4];
+     
 
         //envio de datos
         $.ajax({
             url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
             type: "POST",
-            data: JSON.stringify({
-                "eq": dataIncremental[0],
-                "inicio": dataIncremental[1],
-                "iteraciones": dataIncremental[3],
-                "delta": dataIncremental[2]
-
-            }),
+            data: JSON.stringify({ "eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
@@ -51,19 +43,19 @@ var capture = {
             var data = ($(this).val());
             bisectionData.push(data)
         });
-        
+
         var eq = bisectionData[0];
         var x0 = bisectionData[1];
         var x1 = bisectionData[2];
         var iteraciones = bisectionData[3];
         var tolerancia = bisectionData[4];
 
-     
+
 
         $.ajax({
             url: 'http://74.208.132.152/practica/no_lineales/biseccion',
             type: "POST",
-            data: JSON.stringify({"eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia}),
+            data: JSON.stringify({ "eq": eq, "x0": x0, "x1": x1, "iteraciones": iteraciones, "tolerancia": tolerancia }),
             contentType: 'application/json',
             dataType: 'json',
             success: function (response) {
