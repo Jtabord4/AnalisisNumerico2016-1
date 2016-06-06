@@ -59,7 +59,7 @@ var capture = {
             dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.bisection(response)
+                show.bisection(JSON.parse(response));
             }
         });
     },
