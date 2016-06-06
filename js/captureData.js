@@ -125,14 +125,15 @@ var capture = {
 
 
         var eq = newtonData[0];
-        var inicio = newtonData[1];
-        var iteraciones = newtonData[2];
-        var delta = newtonData[3];
+        var derivada = newtonData[1];
+        var inicio = newtonData[2];
+        var iteraciones = newtonData[3];
+        var delta = newtonData[4];
 
         $.ajax({
             url: 'http://74.208.132.152/practica/no_lineales/newton',
             type: "POST",
-            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "delta": delta }),
+            data: JSON.stringify({ "eq": eq, "x0": inicio,"derivate": derivada, "iteraciones": iteraciones, "delta": delta }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
