@@ -137,7 +137,7 @@ var capture = {
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
-                show.bisection(JSON.parse(response));
+                show.newton(JSON.parse(response));
             }
         });
     },
