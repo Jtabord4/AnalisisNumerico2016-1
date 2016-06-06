@@ -292,7 +292,7 @@ var capture = {
             type: 'POST',
             data: JSON.stringify(jacobiOutput),
             contentType: 'application/json',
-            dataType: 'json',
+            dataType: 'jsonp',
             success: function (response) {
                 //mostrar resultado
                 if (method === 'jacobi') {
