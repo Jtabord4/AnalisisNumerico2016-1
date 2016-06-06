@@ -164,7 +164,7 @@ var capture = {
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
-                show.newton(JSON.parse(response));
+                show.fijo(JSON.parse(response));
             }
         });
 
