@@ -20,6 +20,7 @@ var show = {
     },
 
     bisection: function (data) {
+        JSON.parse(data.output);
         for (var i = 0; i < data.output.length; i++) {
             var a = data.output[i].a;
             var b = data.output[i].b;
@@ -46,20 +47,20 @@ var show = {
         }
     },
     secante: function () {
-        for (var i = 0; i < data.output.length; i++) {
-            var a = data.output[i].a;
-            var b = data.output[i].b;
-            var m = data.output[i].m;
-            var error = data.output[i].errabs;
-            $("#resultadoBisection").html("");
-            $("#resultadoBisection").append(
-                "<div>Entre el intervalo " + a +
-                " y " + b +
-                " hay una raiz en " + m +
-                " con un error de " + error
-                + "</div>"
-            )
-        }
+
+        var a = data.output.a;
+        var b = data.output.b;
+        var m = data.output.m;
+        var error = data.output.errabs;
+        $("#resultadoBisection").html("");
+        $("#resultadoBisection").append(
+            "<div>Entre el intervalo " + a +
+            " y " + b +
+            " hay una raiz en " + m +
+            " con un error de " + error
+            + "</div>"
+        )
+
     },
 
     newton: function (data) {
