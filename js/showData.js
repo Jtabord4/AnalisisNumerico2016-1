@@ -25,10 +25,10 @@ var show = {
             var m = data.output[i].m;
             var error = data.output[i].errabs;
             $("#resultadoBisection").append(
-                "<div>Entre el intervalo" + a +
-                "y" + b +
-                "hay una raiz en" + m +
-                "con un error de" + error
+                "<div>Entre el intervalo " + a +
+                " y " + b +
+                " hay una raiz en " + m +
+                " con un error de " + error
                 + "</div>"
             )
 
