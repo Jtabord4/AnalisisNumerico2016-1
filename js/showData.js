@@ -68,17 +68,11 @@ var show = {
         }
     },
     jacobi: function (data, method) {
-        var n;
+        var n = data.output.n;
+        var vector = data.output.vector;
+        var error = data.output.error;
+        var motivo = data.output.motivo_salida;
         if (data.status === 'true') {
-            n = data.output.n;
-         /*   var n = data.output.n;
-            var vector = data.output.vector;
-            var error = data.output.error;
-            var motivo = data.output.motivo_salida;*/
-            console.log(data.output)
-            console.log(data.output.n)
-            console.log(data.output.vector)
-            console.log(data.output.error)
             $('#iterativosOutput').html(
                 '<div> Por' + method + '  el metodo termina por' +
                 data.output.motivo_salida + 'en la iteracion' +
