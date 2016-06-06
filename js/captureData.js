@@ -122,23 +122,21 @@ var capture = {
             newtonData.push(data)
         });
 
-        var newtonOutput = {
-            'eq': dataIncremental[0],
-            'inicio': dataIncremental[1],
-            'iteraciones': dataIncremental[3],
-            'delta': dataIncremental[2],
 
-        }
+
+        var eq = bisectionData[0];
+        var inicio = bisectionData[1];
+        var iteraciones = bisectionData[1];
+        var delta = bisectionData[2];
 
         $.ajax({
-            url: '...',
-            type: 'POST',
-            data: JSON.stringify(newtonOutput),
+            url: url,
+            type: "POST",
+            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "tolerancia": tolerancia, "delta": delta }),
             contentType: 'application/json',
-            dataType: 'json',
             success: function (response) {
                 //mostrar resultado
-                show.newton(JSON.parse(response))
+                show.bisection(JSON.parse(response));
             }
         });
     },

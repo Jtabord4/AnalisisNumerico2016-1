@@ -64,10 +64,22 @@ var show = {
     },
 
     newton: function (data) {
-        if (data.status === 'true') {
-            var output = data.output;
-            $('#resultadoBisection').html(output)
+        for (var i = 0; i < data.output.length; i++) {
+            var x = data.output[i].x;
+            var fx = data.output[i].fx;
+            var gx = data.output[i].fxx;
+            var error = data.output[i].errorabs;
+            $("#resultadoNewton").append(
+                "<li class='list-group-item'>Existe una raiz en " + x
+                + " y el f(x) =  " + fx
+                + " con la derivada "
+                + gx + " y un error de "
+                + error + "</li>"
+            )
+          
+
         }
+
     },
     fijo: function (data) {
         if (data.status === 'true') {
