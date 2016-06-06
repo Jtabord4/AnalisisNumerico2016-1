@@ -198,7 +198,7 @@ var capture = {
             }
 
             for (var i = 0; i < matrix.length; i++) {
-                b.push(matrix[i][matriz.idVariable]);
+                bi.push(matrix[i][matriz.idVariable]);
                 matrix[i].pop();
             }
             A = matrix;
