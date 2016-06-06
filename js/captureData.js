@@ -26,7 +26,7 @@ var capture = {
         $.ajax({
             url: 'http://74.208.132.152/practica/basic/busquedas_incrementales',
             type: "POST",
-            data: JSON.stringify({ "eq": eq, "inicio": x0, "iteraciones": iteraciones, "delta": delta }),
+            data: JSON.stringify({ "eq": eq, "inicio": inicio, "iteraciones": iteraciones, "delta": delta }),
             contentType: 'application/json',
             success: function (response) {
                 //mostrar resultado
