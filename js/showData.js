@@ -72,15 +72,10 @@ var show = {
         var vector = data.output.vector;
         var error = data.output.error;
         var motivo = data.output.motivo_salida;
-        if (data.status === 'true') {
-            $("#iterativosOutput").html(
-                "<div> Por" + method + "el metodo termina por" +
-                data.output.motivo_salida + "en la iteracion" +
-                data.output.n + n + "con el siguiente vector:" +
-                data.output.vector + "y un error de" +
-                data.output.error + "</div>"
-            )
-
-        }
+        $("#iterativosOutput").html("<div> Por " + method + "el metodo termina por " +
+            motivo + "en la iteracion " +
+            n + "con el siguiente vector:" +
+            vector + "y un error de" +
+            error + "</div>")
     }
 }
