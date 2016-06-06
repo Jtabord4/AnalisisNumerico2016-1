@@ -292,7 +292,7 @@ var capture = {
     integracion: function (method) {
         //arreglo de datos
         var dataIntegracion = [];
-
+        var url;
 
 
         // obetener valores
